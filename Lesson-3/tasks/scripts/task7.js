@@ -3,22 +3,26 @@ let monthNumber = parseInt(prompt('Введіть номер місяця від
 
 
 // Виводимо результат
-
-if (monthNumber >= 3 && monthNumber <= 5)
+if (monthNumber <= 0 || monthNumber > 12)
   document.write(`
-  <p>Місяць №${monthNumber} весняний.</p>
+  <p>Введіть корректне значення.</p>
   `)
 else
-  if (monthNumber >= 6 && monthNumber <= 8)
+  if (monthNumber >= 3 && monthNumber <= 5)
     document.write(`
-  <p>Місяць №${monthNumber} літній.</p>
+  <p>Місяць №${monthNumber} весняний.</p>
   `)
   else
-    if (monthNumber >= 9 && monthNumber <= 11)
+    if (monthNumber >= 6 && monthNumber <= 8)
       document.write(`
-  <p>Місяць №${monthNumber} осінній.</p>
+  <p>Місяць №${monthNumber} літній.</p>
   `)
     else
-      document.write(`
+      if (monthNumber >= 9 && monthNumber <= 11)
+        document.write(`
+  <p>Місяць №${monthNumber} осінній.</p>
+  `)
+      else
+        document.write(`
   <p>Місяць №${monthNumber} зимній.</p>
   `)

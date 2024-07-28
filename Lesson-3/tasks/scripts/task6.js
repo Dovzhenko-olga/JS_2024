@@ -3,37 +3,41 @@ let dayOfWeekNumber = parseInt(prompt('Введіть номер дня тижн
 
 
 // Виводимо результат
-
-if (dayOfWeekNumber === 1)
+if (dayOfWeekNumber <= 0 || dayOfWeekNumber > 7)
   document.write(`
-  <p>Сьогодні понеділок.</p>
+  <p>Введіть корректне значення.</p>
   `)
 else
-  if (dayOfWeekNumber === 2)
+  if (dayOfWeekNumber === 1)
     document.write(`
-  <p>Сьогодні вівторок.</p>
+  <p>Сьогодні понеділок.</p>
   `)
   else
-    if (dayOfWeekNumber === 3)
+    if (dayOfWeekNumber === 2)
       document.write(`
-  <p>Сьогодні середа.</p>
+  <p>Сьогодні вівторок.</p>
   `)
     else
-      if (dayOfWeekNumber === 4)
+      if (dayOfWeekNumber === 3)
         document.write(`
-  <p>Сьогодні четвер.</p>
+  <p>Сьогодні середа.</p>
   `)
       else
-        if (dayOfWeekNumber === 5)
+        if (dayOfWeekNumber === 4)
           document.write(`
-  <p>Сьогодні п\'ятниця.</p>
+  <p>Сьогодні четвер.</p>
   `)
         else
-          if (dayOfWeekNumber === 6)
+          if (dayOfWeekNumber === 5)
             document.write(`
-  <p>Сьогодні субота.</p>
+  <p>Сьогодні п\'ятниця.</p>
   `)
           else
-            document.write(`
+            if (dayOfWeekNumber === 6)
+              document.write(`
+  <p>Сьогодні субота.</p>
+  `)
+            else
+              document.write(`
   <p>Сьогодні неділя.</p>
   `)

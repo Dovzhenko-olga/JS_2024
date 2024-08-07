@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 12</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 12</h1>
+  <p>
+    Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як одне з чотирьох
+    зображень. Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн, три других – 200,
+    три третіх – 500, три четвертих зображення – 1000грн). Використати цикли і switch (для вибору зображення за
+    номером).
+  </p>
+  <h2>Результат обчислень</h2>
+
+  <script>
+    let firstPictureNumber
+    let secondPictureNumber
+    let thirdPictureNumber
+    let picture = ''
+    let result = 0
+
+    for (let i = 1; i <= 3; i++) {
+      const rundomPicture = 1 + Math.floor(Math.random() * 4)
+
+      switch (i) {
+        case 1: firstPictureNumber = rundomPicture
+          break;
+        case 2: secondPictureNumber = rundomPicture
+          break;
+        case 3: thirdPictureNumber = rundomPicture
+          break;
+      }
+
+      switch (rundomPicture) {
+        case 1: picture = 'lemon.png'
+          break;
+        case 2: picture = 'grape.png'
+          break;
+        case 3: picture = 'strawberry.png'
+          break;
+        case 4: picture = 'seven.jpg'
+          break;
+      }
+      document.write(`<img class="casino" src="./img/${picture}">`)
+    }
+
+    if (firstPictureNumber === secondPictureNumber && secondPictureNumber === thirdPictureNumber) {
+
+      switch (firstPictureNumber) {
+        case 1: result = 100
+          break;
+        case 2: result = 200
+          break;
+        case 3: result = 500
+          break;
+        case 4: result = 1000
+          break;
+      }
+    }
+
+    if (result > 0)
+      document.write(`<p> Ваш виграш ${result}грн.</p>`)
+    else document.write(`<p> Нажаль, Ви нічогоне виграли. Спробуйте ще! </p>`)
+
+  </script>
+  <div>
+    <a href="../index.html">Повернутися до списку завдань</a>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 3</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 3</h1>
+  <p>
+    Вивести таблицю з одним рядком і 7 стовпцями.
+  </p>
+  <h2>Результат обчислень</h2>
+
+  <script>
+    document.write(`
+    <table border="2" cellspacing="0">
+    <tr>
+    `)
+    for (let i = 1; i <= 7; i++) {
+      document.write(`
+    <td>${i}</td>
+    `)
+    }
+    document.write(`
+    </tr>
+    </table>
+    `)
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

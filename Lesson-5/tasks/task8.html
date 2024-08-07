@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 5</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 5</h1>
+  <p>
+    Вивести таблицю з 3 рядків і 3 стовпців з пронумерованими комірками.
+  </p>
+  <h2>Результат обчислень</h2>
+
+  <script>
+    let cellNumber = 1
+    document.write(`
+    <table border="2" cellspacing="0">
+    `)
+    for (let i = 0; i < 3; i++) {
+      document.write(`<tr>`)
+      for (let j = 0; j < 3; j++) {
+        document.write(`<td>${cellNumber}</td>`)
+        cellNumber++
+      }
+      document.write(`</tr>`)
+    }
+    document.write(`</table>`)
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

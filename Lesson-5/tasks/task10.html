@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 7</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 7</h1>
+  <p>
+    Вивести на екран N абзаців (N вводиться користувачем) із заголовками і зростаючою кількістю параграфів.
+  </p>
+  <h2>Результат обчислень</h2>
+  <div>
+    <script>
+      let articlesNumber = parseInt(prompt('Введіть кількість абзаців', '1'))
+
+      for (let i = 1; i <= articlesNumber; i++) {
+        document.write(`
+          <h1 class="title" >Заголовок ${i}</h1>
+        `)
+        for (let j = 1; j <= i; j++) {
+          document.write(`
+          <p>Розділ ${i}, параграф ${j}</p>
+        `)
+        }
+        document.write(`<hr>`)
+      }
+    </script>
+  </div>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

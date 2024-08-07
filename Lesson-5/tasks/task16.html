@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 13</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 13</h1>
+  <p>
+    Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі розміром N*M. Маючи К снарядів користувач
+    намагається потопити корабель.
+  </p>
+  <h2>Результат обчислень</h2>
+
+  <script>
+    const widthOfField = parseInt(prompt('Введіть ширину грального поля', '2'))
+    const heightOfField = parseInt(prompt('Введіть висоту грального поля', '2'))
+    const shotsNumber = parseInt(prompt('Введіть кількість снарядів', '1'))
+
+    const shipRowPosition = 1 + Math.floor(Math.random() * widthOfField)
+    const shipColPosition = 1 + Math.floor(Math.random() * heightOfField)
+
+    for (let i = 1; i <= shotsNumber; i++) {
+
+      let userRowShot = parseInt(prompt('Введіть координату пострілу по горизонталі', '1'))
+      let userColShot = parseInt(prompt('Введіть координату пострілу по вертикалі', '1'))
+
+      if (userRowShot === shipRowPosition && userColShot === shipColPosition) {
+
+        document.write(`<p> Вітаємо! Ви потопили корабель з ${i} пострілу.</p>`)
+        break
+      }
+      else {
+        if (i < shotsNumber)
+          alert(`Ви не влучили. Спробуйте ще. Залишилось ${shotsNumber - i} снаряди.`)
+        else document.write(`<p> Нажаль, снаряди закінчилися. Ви не влучили у корабель. Спробуйте ще! </p>`)
+      }
+    }
+
+
+  </script>
+  <div>
+    <a href="../index.html">Повернутися до списку завдань</a>
+  </div>
+</body>
+
+</html>

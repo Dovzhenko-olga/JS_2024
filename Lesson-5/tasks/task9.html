@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 6</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 6</h1>
+  <p>
+    Вивести 3 таблиці (по 3 рядки і 3 стовпці у кожній) зі скрізною нумерацією.
+  </p>
+  <h2>Результат обчислень</h2>
+  <div>
+    <script>
+      let cellNumber = 1
+      for (let i = 0; i < 3; i++) {
+        document.write(`
+    <table class="table" border="2" cellspacing="0">
+    `)
+        for (let j = 0; j < 3; j++) {
+          document.write(`<tr>`)
+          for (let k = 0; k < 3; k++) {
+            document.write(`<td>${cellNumber}</td>`)
+            cellNumber++
+          }
+          document.write(`</tr>`)
+        }
+        document.write(`</table>`)
+      }
+    </script>
+  </div>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

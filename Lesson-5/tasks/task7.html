@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 4</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 4</h1>
+  <p>
+    Вивести таблицю з 3 рядків і 7 стовпців.
+  </p>
+  <h2>Результат обчислень</h2>
+
+  <script>
+    document.write(`
+    <table border="2" cellspacing="0">
+    `)
+    for (let i = 0; i < 3; i++) {
+      document.write(`<tr>`)
+      for (let j = 1; j <= 7; j++) {
+        document.write(`<td>${j}</td>`)
+      }
+      document.write(`</tr>`)
+    }
+    document.write(`</table>`)
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

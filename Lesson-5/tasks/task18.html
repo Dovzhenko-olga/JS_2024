@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 15</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 15</h1>
+  <p>
+    Користувач поступово вводить показники температури протягом року. Знайти середню температуру.
+  </p>
+  <h2>Результат обчислень</h2>
+
+  <script>
+
+    let sumTemp = 0
+    let userTemperature
+    let count = 0
+    let isContinue
+
+    do {
+      userTemperature = parseInt(prompt('Введіть показник температури', '23'))
+      if (!userTemperature) continue
+      sumTemp += userTemperature
+      count++
+      isContinue = confirm('Вводим ще показники?')
+    } while (isContinue) {
+      let average = sumTemp / count
+      alert(`Середня температура за ${count} днів становила ${average.toFixed(1)}°С`)
+    }
+
+
+  </script>
+  <div>
+    <a href="../index.html">Повернутися до списку завдань</a>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 8</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 8</h1>
+  <p>
+    Користувач загадує число. За 3 спроби комп’ютер намагається вгадати число користувача (використати confirm).
+  </p>
+  <h2>Результат обчислень</h2>
+
+  <script>
+    alert('Загадайте, будь ласка число від 1 до 20, а я спробую його вгадати з трьох спроб.')
+    let result = ''
+
+    for (let i = 1; i <= 3; i++) {
+      let computerAttempt = 1 + Math.floor(Math.random() * 20)
+      let userAnswer = confirm(`Спроба №${i}. Ви загадали число ${computerAttempt}?`)
+      if (userAnswer) {
+        result = `Який я молодець! Я це зробив з ${i}-ї спроби.`
+        break
+      }
+    }
+    if (!result)
+      result = 'Нажаль в мене не вийшло :('
+    document.write(`<div>${result}</div> `)
+  </script>
+
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

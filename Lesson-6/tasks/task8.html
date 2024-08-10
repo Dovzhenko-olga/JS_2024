@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 6</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 6</h1>
+  <p>
+    На екрані виводиться меню:</br>
+    1.Ініціалізація (сума=0)</br>
+    2.Додати 2</br>
+    3.Додати 3</br>
+    4.Відняти 2</br>
+    5.Відняти 3</br>
+    6.Вивести суму</br>
+    7.Вихід</br>
+    Шляхом поступового вибору відповідних пунктів спробувати отримати число N, яке вводиться з клавіатури.
+  </p>
+  <!-- <h2>Результат обчислень</h2> -->
+  <script>
+    let userNumber = parseInt(prompt('Введіть число, яке треба знайти', '5'))
+    let userChoice
+    let sum = 0
+    let result = ''
+    do {
+      userChoice = parseInt(prompt(`Що бажаєте зробити?
+        1.Ініціалізація (сума=0)
+        2.Додати 2
+        3.Додати 3
+        4.Відняти 2
+        5.Відняти 3
+        6.Вивести суму
+        7.Вихід
+
+        Введіть номер пункту меню
+        `, '1'))
+      switch (userChoice) {
+        case 1: sum = 0
+          break;
+        case 2: sum += 2
+          break;
+        case 3: sum += 3
+          break;
+        case 4: sum -= 2
+          break;
+        case 5: sum -= 3
+          break;
+        case 6: result = `Сума дорівнює ${sum}`
+          break;
+        case 7: result = 'The end'
+          break;
+      }
+    } while (sum !== userNumber || result === 'The end') {
+      if (sum === userNumber)
+        alert(`Вітаємо! У Вас вийшло число ${userNumber}`)
+      else
+        alert(`${result}!`)
+    }
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

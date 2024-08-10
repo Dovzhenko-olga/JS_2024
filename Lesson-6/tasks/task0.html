@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Діаграма</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Діаграма</h1>
+  <p>
+    Вертикальну діаграму з 8 рандомними значеннями (0-100)
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+
+    document.write(`<div class="container">`)
+    for (let itemIndex = 0; itemIndex < 8; itemIndex++) {
+      const randNum = 1 + Math.floor(Math.random() * 100)
+      document.write(`<div class="item" style="height: ${randNum}%">${randNum}</div>`)
+    }
+    document.write(`</div>`)
+
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

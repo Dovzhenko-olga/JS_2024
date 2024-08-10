@@ -22,16 +22,22 @@
     let sum = 0
     let count = 0
 
-    for (let i = startOfInterval + 1; i < endOfInterval; i++) {
-      if (i % 2 !== 0) {
-        sum += i
-        count++
-      }
-      if (count === 5) break
+    for (let i = startOfInterval + (1 - startOfInterval % 2); i < endOfInterval && count < 5; i += 2) {
+      sum += i
+      count++
     }
 
+    // let startNum = startOfInterval % 2 != 0 ? startOfInterval : startOfInterval + 1
 
-    document.write(`<div>Сума п'яти непарних чисел в інтервалі між ${startOfInterval} і ${endOfInterval} дорівнює ${sum}.</div>`)
+    // for (let i = startNum; i < endOfInterval && count < 5; i += 2) {
+    //   sum += i
+    //   count++
+    //   // if (count === 5) break
+    // }
+
+    if (count === 5)
+      document.write(`<div>Сума п'яти непарних чисел в інтервалі між ${startOfInterval} і ${endOfInterval} дорівнює ${sum}.</div>`)
+    else document.write(`<div>Нажаль, у заданому діапазоні тільки ${count} непарних числа :(</div >`)
   </script>
 
   <a href="../index.html">Повернутися до списку завдань</a>

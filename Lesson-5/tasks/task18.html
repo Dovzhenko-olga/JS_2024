@@ -26,6 +26,10 @@
     do {
       userTemperature = parseInt(prompt('Введіть показник температури', '23'))
       if (!userTemperature) continue
+      // if (isNaN(userTemperature)) {
+      //   alert('Значення некоректне')
+      //   continue
+      // }
       sumTemp += userTemperature
       count++
       isContinue = confirm('Вводим ще показники?')
@@ -42,3 +46,5 @@
 </body>
 
 </html>
+
+<!-- Урок 6 18 хвилина і++ перенести в цикл -->

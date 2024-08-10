@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 5</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 5</h1>
+  <p>
+    На екрані виводиться меню:</br>
+    1. Сказати «Привіт».</br>
+    2. Сказати «Зачекай».</br>
+    3. Сказати «До побачення».</br>
+    4. Вихід.</br>
+    Шляхом вибору пунктів меню виводити відповідні повідомлення, поки не буде вибрано пункт номер 4.
+  </p>
+  <!-- <h2>Результат обчислень</h2> -->
+  <script>
+    let userChoice
+    let result = ''
+    do {
+      userChoice = parseInt(prompt(`Що бажаєте сказати?
+        1. Сказати «Привіт».
+        2. Сказати «Зачекай».
+        3. Сказати «До побачення».
+        4. Вихід.
+
+        Введіть номер пункту меню
+        `, '1'))
+      switch (userChoice) {
+        case 1: result = 'Привіт'
+          break;
+        case 2: result = 'Зачекай'
+          break;
+        case 3: result = 'До побачення'
+          break;
+        default: result = 'The end'
+          break;
+      }
+      alert(`${result}!`)
+    } while (userChoice !== 4)
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 3</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 3</h1>
+  <p>
+    З клавіатури поступово вводяться числа. Знайти суму перших N парних чисел.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    let quantityOfEvenNumbers = parseInt(prompt('Скільки парних чисел треба просумувать?', '3'))
+    let sum = 0
+    let count = quantityOfEvenNumbers
+
+    for (; ;) {
+      const userNumber = parseFloat(prompt('Введіть число', '6'))
+      if (userNumber % 2 === 0) {
+        sum += userNumber
+        count--
+      }
+      if (count === 0) break
+    }
+
+    document.write(`
+    <p>Сума ${quantityOfEvenNumbers} парних чисел дорівнює ${sum}</p>
+    `)
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

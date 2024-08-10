@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 1</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 1</h1>
+  <p>
+    З клавіатури вводитяться числа поки не буде введено 0. Знайти суму чисел.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    let numbersSum = 0
+    let userNumber
+    do {
+      userNumber = parseFloat(prompt('Введіть число', '6'))
+      numbersSum += userNumber
+    } while (userNumber !== 0)
+
+    document.write(`
+    <p>Сума всіх введених чисел дорівнює ${numbersSum.toFixed(2)}</p>
+    `)
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

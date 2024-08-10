@@ -4,28 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Задача 5</title>
+  <title>Задача -1</title>
   <!-- <script src="./scripts/task1.js"></script> -->
   <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-  <h1>Задача 5</h1>
+  <h1>Задача -1</h1>
   <p>
-    Вивести таблицю з 3 рядків і 3 стовпців з пронумерованими комірками.
+    Вивести на екран таблицю із літер.</br>
+    A B C D E</br>
+    B C D E F</br>
+    C D E F G</br>
+    D E F G H</br>
+    E F G H I</br>
   </p>
   <h2>Результат обчислень</h2>
-
   <script>
-    let cellNumber = 1
+    let firstCharCode = 65
     document.write(`
-    <table border="2" cellspacing="0">
+    <table border="0">
     `)
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 5; i++) {
       document.write(`<tr>`)
-      for (let j = 0; j < 3; j++) {
-        document.write(`<td>${cellNumber++}</td>`)
+      for (let j = 0; j < 5; j++) {
+        document.write(`<td>${String.fromCharCode(firstCharCode)}</td>`)
+        firstCharCode++
       }
+      firstCharCode -= 4
       document.write(`</tr>`)
     }
     document.write(`</table>`)

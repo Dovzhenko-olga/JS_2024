@@ -18,16 +18,27 @@
   <script>
     let quantityOfEvenNumbers = parseInt(prompt('Скільки парних чисел треба просумувать?', '3'))
     let sum = 0
-    let count = quantityOfEvenNumbers
+    // let count = quantityOfEvenNumbers
+    let count = 0
 
-    for (; ;) {
+    do {
       const userNumber = parseFloat(prompt('Введіть число', '6'))
       if (userNumber % 2 === 0) {
         sum += userNumber
-        count--
+        count++
       }
-      if (count === 0) break
+
     }
+    while (count < quantityOfEvenNumbers)
+
+    // for (; ;) {
+    //   const userNumber = parseFloat(prompt('Введіть число', '6'))
+    //   if (userNumber % 2 === 0) {
+    //     sum += userNumber
+    //     count--
+    //   }
+    //   if (count === 0) break
+    // }
 
     document.write(`
     <p>Сума ${quantityOfEvenNumbers} парних чисел дорівнює ${sum}</p>

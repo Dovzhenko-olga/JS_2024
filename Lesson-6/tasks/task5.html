@@ -17,20 +17,42 @@
   </p>
   <h2>Результат обчислень</h2>
   <script>
+
     let userSimbol
     let string = ''
     let reversString = ''
 
     do {
       userSimbol = prompt('Введіть символ', 'p')
-      string += userSimbol
+      if (userSimbol !== 'a')
+        string += userSimbol
     } while (userSimbol !== 'a')
     const simbolArray = string.split('').reverse()
-    simbolArray.shift(1)
+    // simbolArray.shift(1)
     reversString = simbolArray.join('')
     document.write(`
     <p>Введені символи в зворотньому напрямку ${reversString}</p>
     `)
+
+    // let string = ''
+    // let userSimbol
+
+    // while (userSimbol !== 'a') {
+    //   userSimbol = prompt('Введіть символ', 'p')
+    //   if (userSimbol !== 'a') {
+    //     string += userSimbol
+    //   }
+    // }
+
+    // let reversString = ''
+    // for (let i = string.length - 1; i >= 0; i--) {
+    //   reversString += string[i]
+    // }
+
+    // document.write(`
+    // <p>Введені символи в зворотньому напрямку ${reversString}</p>
+    // `)
+
   </script>
   <a href="../index.html">Повернутися до списку завдань</a>
 </body>

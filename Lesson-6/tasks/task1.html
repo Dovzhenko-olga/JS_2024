@@ -21,7 +21,7 @@
   </p>
   <h2>Результат обчислень</h2>
   <script>
-    let firstCharCode = 65
+    let firstCharCode = 'A'.charCodeAt(0)
     document.write(`
     <table border="0">
     `)
@@ -35,6 +35,25 @@
       document.write(`</tr>`)
     }
     document.write(`</table>`)
+
+    // for (let i = 0; i < 5; i++) {
+    //   document.write(`<div>`)
+    //   for (let j = i; j < i + 5; j++) {
+    //     document.write(`${String.fromCharCode(firstCharCode + j)}`)
+    //   }
+    //   document.write(`</div>`)
+    // }
+
+    // let firstCharCode = 'A'.charCodeAt(0)
+
+    // for (let i = 0; i < 5; i++) {
+    //   let line = ''
+    //   for (let j = 0; j < 5; j++) {
+    //     let char = String.fromCharCode(firstCharCode + i + j)
+    //     line += char + ''
+    //   }
+    //   document.write(line + '<br>')
+    // }
   </script>
   <a href="../index.html">Повернутися до списку завдань</a>
 </body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача -5</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача -5</h1>
+  <p>
+    Відобразити перевернутий трикутник за допомогою символів «о»
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    let charCode = 1086
+    document.write(`<div style="text-align: center; width: fit-content;">`)
+    for (let i = 12; i >= 0; i--) {
+      for (let j = i; j > 0; j--) {
+        document.write(`${String.fromCharCode(charCode)}
+    `)
+      }
+      document.write(`<br>`)
+    }
+    document.write(`</div>`)
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

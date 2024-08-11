@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 7</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 7</h1>
+  <p>
+    Користувач загадує натуральне число від 1 до N. Шляхом задавання мінімальної кількості запитань знайти вказане число
+    (застосувати бінарний пошук, на кожному кроці якого інтервал пошуку зменшується на 2 шляхом порівняння з елементом,
+    який знаходиться у центрі поточного інтервалу).
+  </p>
+  <!-- <h2>Результат обчислень</h2> -->
+  <script>
+    let firstNumber = 1
+    let lastNumber = 10
+    let userNumber = parseInt(prompt(`Загадайте число від ${firstNumber} до ${lastNumber}`, '5'))
+    let middleNumber
+
+    do {
+      middleNumber = Math.round((lastNumber - firstNumber) / 2)
+      let userAnswer = confirm(`Ви загадали число більше за ${middleNumber}?`)
+      if (userAnswer)
+        firstNumber = middleNumber
+      else lastNumber = middleNumber
+    } while (middleNumber !== userNumber) {
+      alert(`Ви загадали ${userNumber}`)
+    }
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

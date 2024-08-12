@@ -45,9 +45,9 @@
         bigNumbersAmount++
       return bigNumbersAmount
     }
-    let num1 = parseFloat(prompt('Введіть перше число для обчислень', '1'))
-    let num2 = parseFloat(prompt('Введіть друге число для обчислень', '1'))
-    let num3 = parseFloat(prompt('Введіть третє число для обчислень', '1'))
+    const num1 = parseFloat(prompt('Введіть перше число для обчислень', '1'))
+    const num2 = parseFloat(prompt('Введіть друге число для обчислень', '1'))
+    const num3 = parseFloat(prompt('Введіть третє число для обчислень', '1'))
     document.write(`<div>Для чисел ${num1}, ${num2}, ${num3}:
     <ol>
       <li>кількість парних дорівнює ${getEvenNumbersAmount(num1, num2, num3)};</li>

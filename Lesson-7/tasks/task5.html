@@ -20,18 +20,16 @@
   </p>
   <h2>Результат обчислень</h2>
   <script>
-    function getInches(centimetersNumber) {
-      return centimetersNumber * 0.39370078740157
-    }
-    function getPounds(kilogramsNumber) {
-      return kilogramsNumber * 2.20462
-    }
-    function getMiles(kilometersNumber) {
-      return kilometersNumber * 0.62137
-    }
-    let centimetersNumber = parseFloat(prompt('Введіть кількість сантиметрів', '150'))
-    let kilogramsNumber = parseFloat(prompt('Введіть кількість кілограмів', '15'))
-    let kilometersNumber = parseFloat(prompt('Введіть кількість кілометрів', '90'))
+
+    let getInches = centimetersNumber => centimetersNumber * 0.39370078740157
+
+    let getPounds = kilogramsNumber => kilogramsNumber * 2.20462
+
+    let getMiles = kilometersNumber => kilometersNumber * 0.62137
+
+    const centimetersNumber = parseFloat(prompt('Введіть кількість сантиметрів', '150'))
+    const kilogramsNumber = parseFloat(prompt('Введіть кількість кілограмів', '15'))
+    const kilometersNumber = parseFloat(prompt('Введіть кількість кілометрів', '90'))
     document.write(`<div>
     <ol>
       <li>${centimetersNumber}см. дорівнює ${getInches(centimetersNumber).toFixed(2)} дюймів;</li>

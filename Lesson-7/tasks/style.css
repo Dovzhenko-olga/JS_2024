@@ -118,6 +118,10 @@ img {
 .banner img {
   border-radius: 25px;
 }
+.banner img:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 35px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
 .banner h3 {
   font-size: 22px;
   color: #1c1c3e;

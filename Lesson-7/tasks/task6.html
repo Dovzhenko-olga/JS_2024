@@ -29,9 +29,9 @@
       table += `</table>`
       return table
     }
-    let row = parseInt(prompt('Введіть кількість рядків', '5'))
-    let col = parseInt(prompt('Введіть кількість стовпців', '7'))
-    let message = prompt('Введіть повідомлення для комірок таблиці', 'cell')
+    const row = parseInt(prompt('Введіть кількість рядків', '5'))
+    const col = parseInt(prompt('Введіть кількість стовпців', '7'))
+    const message = prompt('Введіть повідомлення для комірок таблиці', 'cell')
     document.write(`<div> Ось таблиця для ${row} рядків і ${col} стовпців:
     ${getTable(row, col, message)}
   </div>`)

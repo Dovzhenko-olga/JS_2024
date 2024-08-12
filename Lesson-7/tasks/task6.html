@@ -17,12 +17,12 @@
   <h2>Результат обчислень</h2>
   <script>
 
-    function getTable(row, col) {
+    function getTable(row, col, message) {
       table = `<table border="2" cellspacing="0">`
       for (let i = 0; i < row; i++) {
         table += `<tr>`
         for (let j = 0; j < col; j++) {
-          table += `<td>cell</td>`
+          table += `<td>${message}</td>`
         }
         table += `<tr>`
       }
@@ -31,8 +31,9 @@
     }
     let row = parseInt(prompt('Введіть кількість рядків', '5'))
     let col = parseInt(prompt('Введіть кількість стовпців', '7'))
+    let message = prompt('Введіть повідомлення для комірок таблиці', 'cell')
     document.write(`<div> Ось таблиця для ${row} рядків і ${col} стовпців:
-    ${getTable(row, col)}
+    ${getTable(row, col, message)}
   </div>`)
 
   </script>

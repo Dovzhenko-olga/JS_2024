@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 6</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 6</h1>
+  <p>Створити функцію, яка створює таблицю з вказаною кількістю рядків і стовпців (таблиця заповнюється заданим
+    фіксованим
+    повідомленням).</p>
+  <h2>Результат обчислень</h2>
+  <script>
+
+    function getTable(row, col) {
+      table = `<table border="2" cellspacing="0">`
+      for (let i = 0; i < row; i++) {
+        table += `<tr>`
+        for (let j = 0; j < col; j++) {
+          table += `<td>cell</td>`
+        }
+        table += `<tr>`
+      }
+      table += `</table>`
+      return table
+    }
+    let row = parseInt(prompt('Введіть кількість рядків', '5'))
+    let col = parseInt(prompt('Введіть кількість стовпців', '7'))
+    document.write(`<div> Ось таблиця для ${row} рядків і ${col} стовпців:
+    ${getTable(row, col)}
+  </div>`)
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 5</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 5</h1>
+  <p>Створити окремі функції, які переводять:
+  <ul>
+    <li>Сантиметри у дюйми;</li>
+    <li>Кілограми у фунти;</li>
+    <li>Кілометри у милі.</li>
+  </ul>
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    function getInches(centimetersNumber) {
+      return centimetersNumber * 0.39370078740157
+    }
+    function getPounds(kilogramsNumber) {
+      return kilogramsNumber * 2.20462
+    }
+    function getMiles(kilometersNumber) {
+      return kilometersNumber * 0.62137
+    }
+    let centimetersNumber = parseFloat(prompt('Введіть кількість сантиметрів', '150'))
+    let kilogramsNumber = parseFloat(prompt('Введіть кількість кілограмів', '15'))
+    let kilometersNumber = parseFloat(prompt('Введіть кількість кілометрів', '90'))
+    document.write(`<div>
+    <ol>
+      <li>${centimetersNumber}см. дорівнює ${getInches(centimetersNumber).toFixed(2)} дюймів;</li>
+      <li>${kilogramsNumber}кг. дорівнює ${getPounds(kilogramsNumber).toFixed(2)} фунтів;</li>
+      <li>${kilometersNumber}км. дорівнює ${getMiles(kilometersNumber).toFixed(2)} милі.</li>
+    </ol>
+  </div>`)
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

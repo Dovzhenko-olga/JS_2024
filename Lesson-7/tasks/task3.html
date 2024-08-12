@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 3</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 3</h1>
+  <p>Створити окремі функції, які для 4 чисел знаходять:
+  <ul>
+    <li>суму;</li>
+    <li>добуток;</li>
+    <li>середнє арифметичне;</li>
+    <li>мінімальне значення.</li>
+  </ul>
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    function getSum(num1, num2, num3, num4) {
+      return num1 + num2 + num3 + num4
+    }
+    function getProduct(num1, num2, num3, num4) {
+      return num1 * num2 * num3 * num4
+    }
+    function getAverage(num1, num2, num3, num4) {
+      return (num1 + num2 + num3 + num4) / 4
+    }
+    function getMin(num1, num2, num3, num4) {
+      let min = num1
+      if (min > num2)
+        min = num2
+      if (min > num3)
+        min = num3
+      if (min > num4)
+        min = num4
+      return min
+    }
+    let num1 = parseFloat(prompt('Введіть перше число для обчислень', '1'))
+    let num2 = parseFloat(prompt('Введіть друге число для обчислень', '1'))
+    let num3 = parseFloat(prompt('Введіть третє число для обчислень', '1'))
+    let num4 = parseFloat(prompt('Введіть четверте число для обчислень', '1'))
+    document.write(`<div>Для чисел ${num1}, ${num2}, ${num3}, ${num4}:
+    <ol>
+      <li>сума дорівнює ${getSum(num1, num2, num3, num4).toFixed(2)};</li>
+      <li>добуток дорівнює ${getProduct(num1, num2, num3, num4).toFixed(2)};</li>
+      <li>середнє арифметичне дорівнює ${getAverage(num1, num2, num3, num4).toFixed(2)};</li>
+      <li>мінімальне значення дорівнює ${getMin(num1, num2, num3, num4)}.</li>
+    </ol>
+  </div>`)
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

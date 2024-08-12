@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 7</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 7</h1>
+  <p>Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи до зображень передаються у
+    функцію)</p>
+  <h2>Результат обчислень</h2>
+  <script>
+
+    function showImage(img1, img2, img3, img4) {
+      let rundImageNumber = 1 + Math.floor(Math.random() * 4)
+      let rundImageName = ''
+      switch (rundImageNumber) {
+        case 1: rundImageName = img1
+          break;
+        case 2: rundImageName = img2
+          break;
+        case 3: rundImageName = img3
+          break;
+        case 4: rundImageName = img4
+          break;
+      }
+      document.write(`<img src="./img/${rundImageName}" alt="${rundImageName}">`)
+    }
+    let img1 = 'bird.jpg'
+    let img2 = 'monster.jpg'
+    let img3 = 'penguin.png'
+    let img4 = 'witch.jpg'
+
+    showImage(img1, img2, img3, img4)
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

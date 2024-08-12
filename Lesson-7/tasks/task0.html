@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 0</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 0</h1>
+  <p>Створити функцію, яка за номером місяця повертає пору року, до якої відноситься цей місяць.</p>
+  <h2>Результат обчислень</h2>
+  <script>
+    function getSeasonName(monthNumber) {
+      let seasonName = ''
+      switch (monthNumber) {
+        case 1:
+        case 2:
+        case 12: seasonName = 'Зима'
+          break;
+        case 3:
+        case 4:
+        case 5: seasonName = 'Весна'
+          break;
+        case 6:
+        case 7:
+        case 8: seasonName = 'Літо'
+          break;
+        case 9:
+        case 10:
+        case 11: seasonName = 'Осінь'
+          break;
+        default: seasonName = 'невідома'
+          alert('Введіть коректні дані')
+          break;
+      }
+      return seasonName
+    }
+    let monthNumber = parseInt(prompt('Введіть номер місяця', '1'))
+    document.write(`<div>Місяць під номером ${monthNumber} - це пора року ${getSeasonName(monthNumber)}.</div>`)
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

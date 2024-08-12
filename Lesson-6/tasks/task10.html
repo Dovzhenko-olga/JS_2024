@@ -21,14 +21,16 @@
     let firstNumber = 1
     let lastNumber = 10
     let userNumber = parseInt(prompt(`Загадайте число від ${firstNumber} до ${lastNumber}`, '5'))
-    let middleNumber
+    let middleNumber = Math.round((lastNumber - firstNumber) / 2)
 
     do {
-      middleNumber = Math.round((lastNumber - firstNumber) / 2)
-      let userAnswer = confirm(`Ви загадали число більше за ${middleNumber}?`)
-      if (userAnswer)
-        firstNumber = middleNumber
-      else lastNumber = middleNumber
+      let userAnswer = confirm(`Ви загадали число ${middleNumber}?`)
+      if (!userAnswer) {
+        userAnswer = confirm(`Ви загадали число більше за ${middleNumber}?`)
+        if (userAnswer)
+          middleNumber += Math.round(middleNumber / 2)
+        else middleNumber -= Math.floor(middleNumber / 2)
+      }
     } while (middleNumber !== userNumber) {
       alert(`Ви загадали ${userNumber}`)
     }

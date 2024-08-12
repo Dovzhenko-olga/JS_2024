@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 4</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 4</h1>
+  <p>Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість
+    додатних, кількість більших за 100. (Поки що трьома функціями)</p>
+  <h2>Результат обчислень</h2>
+  <script>
+    function getEvenNumbersAmount(num1, num2, num3) {
+      let evenNumbersAmount = 0
+      if (num1 % 2 === 0)
+        evenNumbersAmount++
+      if (num2 % 2 === 0)
+        evenNumbersAmount++
+      if (num3 % 2 === 0)
+        evenNumbersAmount++
+      return evenNumbersAmount
+    }
+    function getPositiveNumbersAmount(num1, num2, num3) {
+      let positiveNumbersAmount = 0
+      if (num1 > 0)
+        positiveNumbersAmount++
+      if (num2 > 0)
+        positiveNumbersAmount++
+      if (num3 > 0)
+        positiveNumbersAmount++
+      return positiveNumbersAmount
+    }
+    function getBigNumbersAmount(num1, num2, num3) {
+      let bigNumbersAmount = 0
+      if (num1 > 100)
+        bigNumbersAmount++
+      if (num2 > 100)
+        bigNumbersAmount++
+      if (num3 > 100)
+        bigNumbersAmount++
+      return bigNumbersAmount
+    }
+    let num1 = parseFloat(prompt('Введіть перше число для обчислень', '1'))
+    let num2 = parseFloat(prompt('Введіть друге число для обчислень', '1'))
+    let num3 = parseFloat(prompt('Введіть третє число для обчислень', '1'))
+    document.write(`<div>Для чисел ${num1}, ${num2}, ${num3}:
+    <ol>
+      <li>кількість парних дорівнює ${getEvenNumbersAmount(num1, num2, num3)};</li>
+      <li>кількість додатних дорівнює ${getPositiveNumbersAmount(num1, num2, num3)};</li>
+      <li>кількість більших за 100 дорівнює ${getBigNumbersAmount(num1, num2, num3)}.</li>
+    </ol>
+  </div>`)
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 8</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 8</h1>
+  <p>Створити функцію, яка виводить банер (у функцію передаються: зображення, заголовок та посилання, куди
+    переходимо при кліку на зображення). Тег img повинен знаходитись у середині тега a: &#60;a&#62; &#60;img
+    src=”шлях”&#62; &#60;/a&#62;</p>
+  <h2>Результат обчислень</h2>
+
+  <script>
+
+    function showBanner(img, title, link) {
+
+      document.write(`<div class="banner">
+    <h3>${title}</h3>
+    <a href="${link}"><img src="${img}" alt="myTasks"></a>
+  </div>`)
+    }
+
+    let img = './img/flowers.jpg'
+    let title = 'Повернутися до списку завдань'
+    let link = '../index.html'
+
+    showBanner(img, title, link)
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

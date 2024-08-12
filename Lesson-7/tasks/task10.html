@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 10</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 10</h1>
+  <p>Дано покази температур (довільна кількість). Розробити функцію, яка дозволить знайти середнє значення для додатних
+    показів температури.</p>
+  <h2>Результат обчислень</h2>
+
+  <script>
+
+    function getAveragePositiveNumbers(numbersAmount) {
+      let positiveNumbersAmount = 0
+      let sumPositiveNumbers = 0
+
+      for (let i = 0; i < numbersAmount;) {
+        const tempNumber = parseFloat(prompt('Введіть показ температури', '23.5'))
+        if (!tempNumber) {
+          alert('Введіть коректні дані')
+          continue
+        }
+        if (tempNumber > 0) {
+          positiveNumbersAmount++
+          sumPositiveNumbers += tempNumber
+        }
+        i++
+      }
+      return sumPositiveNumbers / positiveNumbersAmount
+    }
+
+    const numbersAmount = parseInt(prompt('Введіть кількість показів температури', '5'))
+
+    document.write(`<div>Із ${numbersAmount} показників температури середнє значення для додатних
+    показів дорівнює ${getAveragePositiveNumbers(numbersAmount)}.</div>`)
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

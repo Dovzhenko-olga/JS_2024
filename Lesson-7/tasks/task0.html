@@ -33,14 +33,23 @@
         case 10:
         case 11: seasonName = 'Осінь'
           break;
-        default: seasonName = 'невідома'
-          alert('Введіть коректні дані')
-          break;
+        default:
+          throw new Error('Month is not correct')
       }
       return seasonName
     }
+
     const monthNumber = parseInt(prompt('Введіть номер місяця', '1'))
-    document.write(`<div>Місяць під номером ${monthNumber} - це пора року ${getSeasonName(monthNumber)}.</div>`)
+
+    try {
+      let res = getSeasonName(monthNumber) //команда, яка може призвести до помилки
+      document.write(`<div>Місяць під номером ${monthNumber} - це пора року ${res}.</div>`) //що робити, якщо помилки немає
+    } catch (error) {
+      //що робити коли сталася помилка
+      document.write(`<div>${error.message}.</div>`)
+    }
+
+
   </script>
   <a href="../index.html">Повернутися до списку завдань</a>
 </body>

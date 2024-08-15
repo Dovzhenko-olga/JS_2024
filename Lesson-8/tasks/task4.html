@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 4</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 4</h1>
+  <p>Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які:
+  <ul>
+    <li>починаються на букву «А»;</li>
+    <li>перша і остання літери співпадають;</li>
+    <li>складаються з більше ніш 5 символів.</li>
+  </ul>
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      document.write(`<div style="text-decoration: underline;">Номери - строки</div>`)
+      let carNumbers = ['AA5254KI', 'AI5254HT', 'CAT', 'KA8484AT', 'BE3254EB', 'TESLYA', 'BI9454HT', 'BABY', 'AB4861KA']
+
+      function getAmountOfNumbersWIthLetterA(carNumbers) {
+        let amountOfNumbersWIthLetterA = 0
+
+        for (let i = 0; i < carNumbers.length; i++) {
+          if (carNumbers[i].charCodeAt(0) === 'A'.charCodeAt(0))
+            amountOfNumbersWIthLetterA++
+        }
+
+        return amountOfNumbersWIthLetterA
+      }
+
+
+      function getFirstEndEqualAmount(carNumbers) {
+        let firstEndEqualAmount = 0
+
+        for (let i = 0; i < carNumbers.length; i++) {
+          if (carNumbers[i].charCodeAt(0) === carNumbers[i].charCodeAt(carNumbers[i].length - 1))
+            firstEndEqualAmount++
+        }
+        return firstEndEqualAmount
+      }
+
+      function getMoreThanFifeLetterAmount(carNumbers) {
+        moreThanFifeLetterAmount = 0
+        for (let i = 0; i < carNumbers.length; i++) {
+          if (carNumbers[i].length > 5)
+            moreThanFifeLetterAmount++
+        }
+        return moreThanFifeLetterAmount
+      }
+
+      document.write(`<div>Звіт по номерах:
+        <ol>
+          <li>починаються на букву «А» ${getAmountOfNumbersWIthLetterA(carNumbers)} номери;</li>
+          <li>перша і остання літери співпадають у ${getFirstEndEqualAmount(carNumbers)} номерів;</li>
+          <li>складаються з більше ніш 5 символів ${getMoreThanFifeLetterAmount(carNumbers)} номерів.</li>
+        </ol>
+      </div>`)
+
+      // ====================масиви======================
+      document.write(`<div style="text-decoration: underline;">Номери - масиви</div>`)
+      let carNumbersArr = [['A', 'A', 5, 2, 5, 4, 'K', 'I'], ['A', 'I', 5, 2, 5, 4, 'H', 'T'], ['C', 'A', 'T'], ['K', 'A', 8, 4, 8, 4, 'A', 'T'], ['B', 'E', 3, 2, 5, 4, 'E', 'B'], ['T', 'E', 'S', 'L', 'Y', 'A'], ['B', 'I', 9, 4, 5, 4, 'H', 'T'], ['B', 'A', 'B', 'Y'], ['A', 'B', 4, 8, 6, 1, 'K', 'A']]
+
+      function getAmountOfNumbersWIthLetterA2(carNumbersArr) {
+        let amountOfNumbersWIthLetterA = 0
+
+        for (let i = 0; i < carNumbersArr.length; i++) {
+          if (carNumbersArr[i][0] === 'A')
+            amountOfNumbersWIthLetterA++
+        }
+
+        return amountOfNumbersWIthLetterA
+      }
+
+
+      function getFirstEndEqualAmount2(carNumbersArr) {
+        let firstEndEqualAmount = 0
+
+        for (let i = 0; i < carNumbersArr.length; i++) {
+          if (carNumbersArr[i][0] === carNumbersArr[i][carNumbersArr[i].length - 1])
+            firstEndEqualAmount++
+        }
+        return firstEndEqualAmount
+      }
+
+      function getMoreThanFifeLetterAmount2(carNumbersArr) {
+        moreThanFifeLetterAmount = 0
+        for (let i = 0; i < carNumbersArr.length; i++) {
+          if (carNumbersArr[i].length > 5)
+            moreThanFifeLetterAmount++
+        }
+        return moreThanFifeLetterAmount
+      }
+
+      document.write(`<div>Звіт по номерах:
+          <ol>
+            <li>починаються на букву «А» ${getAmountOfNumbersWIthLetterA2(carNumbersArr)} номери;</li>
+            <li>перша і остання літери співпадають у ${getFirstEndEqualAmount2(carNumbersArr)} номерів;</li>
+            <li>складаються з більше ніш 5 символів ${getMoreThanFifeLetterAmount2(carNumbersArr)} номерів.</li>
+          </ol>
+        </div>`)
+    }
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 7</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 7</h1>
+  <p>Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей:
+  <ul>
+    <li>за весь рік;</li>
+    <li>у першій половині року;</li>
+    <li>у другій половині року;</li>
+    <li>за літо;</li>
+    <li>за ІІ квартал;</li>
+    <li>за парні місяці (з парними номерами);</li>
+    <li>за місяці, які є початковими у сезоні (весна, літо, осінь, зима).</li>
+  </ul>
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      function getPaymentsPerYear() {
+        const paymentsPerYear = []
+
+        for (let i = 1; i <= 12; i++) {
+          const monthPayment = parseFloat(prompt(`Введіть суму платежу за ${i}-й місяць`, '1548,45'))
+          paymentsPerYear.push(monthPayment)
+        }
+
+        return paymentsPerYear
+      }
+
+      // function getMoneyForYear(paymentsPerYear) {
+      //   let moneyForYear = 0
+      //   for (let i = 0; i < paymentsPerYear.length; i++)
+      //     moneyForYear += paymentsPerYear[i]
+      //   return moneyForYear
+      // }
+
+      // function getMoneyFirstHalfYear(paymentsPerYear) {
+      //   let moneyFirstHalfYear = 0
+      //   for (let i = 0; i <= 5; i++)
+      //     moneyFirstHalfYear += paymentsPerYear[i]
+      //   return moneyFirstHalfYear
+      // }
+
+      // function getMoneySecondtHalfYear(paymentsPerYear) {
+      //   let moneySecondtHalfYear = 0
+      //   for (let i = 6; i < paymentsPerYear.length; i++)
+      //     moneySecondtHalfYear += paymentsPerYear[i]
+      //   return moneySecondtHalfYear
+      // }
+
+      // function getMoneyForSummer(paymentsPerYear) {
+      //   let moneyForSummer = 0
+      //   for (let i = 5; i <= 7; i++)
+      //     moneyForSummer += paymentsPerYear[i]
+      //   return moneyForSummer
+      // }
+
+      // function getMoneySecondQuarter(paymentsPerYear) {
+      //   let moneySecondQuarter = 0
+      //   for (let i = 3; i <= 5; i++)
+      //     moneySecondQuarter += paymentsPerYear[i]
+      //   return moneySecondQuarter
+      // }
+
+      // function getMoneyEvenMonth(paymentsPerYear) {
+      //   let moneyEvenMonth = 0
+      //   for (let i = 0; i < paymentsPerYear.length; i++)
+      //     if ((i + 1) % 2 === 0)
+      //       moneyEvenMonth += paymentsPerYear[i]
+      //   return moneyEvenMonth
+      // }
+
+      // function getMoneyStartSeasonMonth(paymentsPerYear) {
+      //   let moneyStartSeasonMonth = 0
+      //   for (let i = 0; i < paymentsPerYear.length; i++)
+      //     if (i === 2 || i === 5 || i === 8 || i === 11)
+      //       moneyStartSeasonMonth += paymentsPerYear[i]
+      //   return moneyStartSeasonMonth
+      // }
+      //-- загальна функція, яка дозволить знайти суму елементів у заданому діапазоні індексів
+      function getSumInRange(valuesList, startIndex, endIndex, indexStep = 1) {
+        let sum = 0
+        //як змінюються номери елементів (індекси)
+        for (let i = startIndex - 1; i < endIndex; i += indexStep) {
+          sum += valuesList[i] //що треба зробити з кожним із елементів
+        }
+        return sum
+      }
+
+      const paymentsPerYear = getPaymentsPerYear()
+
+      // -	за весь рік (1-12);
+      let moneyForYear = getSumInRange(paymentsPerYear, 1, 12)
+      // -	у першій половині року (1-6);
+      let firstHalf = getSumInRange(paymentsPerYear, 1, 6)
+      // -	у другій половині року (7-12);
+      let secondHalf = getSumInRange(paymentsPerYear, 7, 12)
+      // -	за літо (6-8);
+      let forSummer = getSumInRange(paymentsPerYear, 6, 8)
+      // -	за ІІ квартал;
+      let forSecondQuarter = getSumInRange(paymentsPerYear, 4, 6)
+      // -	за парні місяці (з парними номерами);
+      let forEvenMonthes = getSumInRange(paymentsPerYear, 2, 12, 2)
+      // -	за місяці, які є початковими у сезоні (весна-3, літо-6, осінь-9, зима-12)
+      let forStartSeasons = getSumInRange(paymentsPerYear, 3, 12, 3)
+
+      document.write(`<div>Сумарна кількість грошей:
+    <ol>
+      <li>за весь рік ${moneyForYear} грн.;</li>
+      <li>у першій половині року ${firstHalf} грн.;</li>
+      <li>у другій половині року ${secondHalf} грн.;</li>
+      <li>за літо ${forSummer} грн.;</li>
+      <li>за ІІ квартал ${forSecondQuarter} грн.;</li>
+      <li>за парні місяці ${forEvenMonthes} грн.;</li>
+      <li>за місяці, які є початковими у сезоні ${forStartSeasons} грн.;</li>
+    </ol>
+    </div >`)
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

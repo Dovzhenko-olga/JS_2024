@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 6</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 6</h1>
+  <p>Дано послідовність цін товарів та назв (у окремих масивах). Вивести на екран ті, які може собі дозволити
+    користувач (кількість грошей задається).</p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      const moneyAmount = parseFloat(prompt('Введіть кількість грошей', '1500.00'))
+      const productPrices = [235, 45, 1500.01, 15.23, 690, 1499, 2050]
+      const productTitles = ['meat', 'bread', 'whiskey', 'sunflower seeds', 'sausage', 't-shirt', 'pants']
+
+
+      function getProductWhatCanBuy(moneyAmount, productPrices, productTitles) {
+        const availableProducts = []
+
+        for (let i = 0; i < productPrices.length; i++) {
+          if (productPrices[i] <= moneyAmount)
+            availableProducts.push(productTitles[i])
+        }
+
+        return availableProducts
+      }
+
+
+      const availableProducts = getProductWhatCanBuy(moneyAmount, productPrices, productTitles)
+
+      document.write(`<div>Маючи ${moneyAmount} грн. користувач може придбати щось з цих товарів: ${availableProducts.join(", ")}.
+          </div>`)
+    }
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

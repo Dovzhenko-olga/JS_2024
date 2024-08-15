@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 3</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 3</h1>
+  <p>Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я «Іван».</p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')){
+      
+      function getStudentsNames() {
+        const studentsNames = []
+        let studentName = ''
+        do {
+          studentName = prompt(`Введіть ім'я учня`, 'Danya')
+          if (studentName)
+            studentsNames.push(studentName)
+        } while (studentName)
+  
+        return studentsNames
+      }
+  
+      function getIvanAmount(studentsNames) {
+        let ivanAmount = 0
+        for (let i = 0; i < studentsNames.length; i++)
+          if (studentsNames[i].toLowerCase() === 'ivan')
+            ivanAmount++
+        return ivanAmount
+      }
+  
+      const studentsNames = getStudentsNames()
+  
+      document.write(`<div>Ім'я Іван зустрічається у цьому класі ${getIvanAmount(studentsNames)}рази(ів).</div>`)
+  }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 9</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 9</h1>
+  <p>Морський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних кораблів.
+    Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці (якщо у клітинці 0, то клітинка
+    пуста, якщо 1 – то це означає, що там є корабель. Користувач вводить номер клітинки, куди стріляє. Гра
+    продовжується до тих пір, поки не будуть потоплені усі кораблі.</p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      const cellsNumber = parseInt(prompt('Введіть кількіть клітинок для розміщення кораблів', '10'))
+      let shipsNumber = parseInt(prompt('Введіть кількість одиночних кораблів', '4'))
+
+      function getPlaceShips(cellsNumber, shipsNumber) {
+
+        const placeShips = []
+
+        for (let i = 0; i < cellsNumber; i++) {
+          placeShips.push(0)
+        }
+
+        for (let i = 0; i < shipsNumber;) {
+          const ship = Math.floor(Math.random() * cellsNumber)
+          if (placeShips[ship] === 1) continue
+          placeShips[ship] = 1
+          i++
+        }
+
+        return placeShips
+      }
+
+      function userShoot(placeShips, cellsNumber, shipsNumber) {
+        let userChoice
+
+        do {
+          userChoice = parseInt(prompt(`Зробіть свій постріл від 1 до ${cellsNumber}.`, `${cellsNumber - 1}`))
+          if (placeShips[userChoice - 1] === 1) {
+            placeShips[userChoice - 1] = 0
+            shipsNumber--
+            if (shipsNumber > 0)
+              alert(`Вдалий постріл! Лишилося ${shipsNumber} корабля`)
+            else alert(`Вітаю! Всі кораблі потоплені!`)
+          }
+          else alert('Нажаль, Ви не попали. Спробуйте ще раз.')
+        } while (shipsNumber > 0);
+      }
+
+      const placeShips = getPlaceShips(cellsNumber, shipsNumber)
+
+      userShoot(placeShips, cellsNumber, shipsNumber)
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

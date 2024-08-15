@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 8</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 8</h1>
+  <p>Дано одновимірний масив, у якому зберігається певна виграшна сума (елементи заповнюються випадковим чином
+    значеннями від -500 до 500). Надаючи користувачу можливість вибирати номери елементів (поки він не відмовиться).
+    Знаходити сумарний виграш.</p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      const elemNumber = 15
+      const minPrize = -500
+      const maxPrize = 500
+
+      function getPrizesArray(elemNumber, minPrize, maxPrize) {
+
+        const prizesArray = []
+
+        for (let i = 0; i < elemNumber; i++) {
+          const prize = minPrize + Math.floor(Math.random() * (maxPrize - minPrize + 1))
+          prizesArray.push(prize)
+        }
+
+        return prizesArray
+      }
+
+      function getUserPrize(prizesArray) {
+        let userPrizeSum = 0
+        let userChoice = 0
+
+        do {
+          userChoice = parseInt(prompt(`Виберіть призовий номер від 0 до ${elemNumber - 1}.
+        Щоб перервати, натисніть відміна`, '7'))
+          if (userChoice)
+            userPrizeSum += prizesArray[userChoice]
+        } while (userChoice);
+        return userPrizeSum
+      }
+
+      const prizesArray = getPrizesArray(elemNumber, minPrize, maxPrize)
+
+      document.write(`<div>Ваш сумарний виграш ${getUserPrize(prizesArray)}.</div >`)
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

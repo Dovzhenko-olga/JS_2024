@@ -26,14 +26,20 @@
         case 6:
         case 7: dayType = 'вихідний'
           break;
-        default: dayType = 'невідомий'
-          alert('Введіть коректні дані')
-          break;
+        default:
+          throw new Error('Month is not correct')
       }
       return dayType
     }
     const dayNumber = parseInt(prompt('Введіть номер дня тижня', '1'))
-    document.write(`<div>День під номером ${dayNumber} - це ${getDayType(dayNumber)}.</div>`)
+
+    try {
+      let res = getDayType(dayNumber)
+      document.write(`<div>День під номером ${dayNumber} - це ${res}.</div>`)
+    } catch (error) {
+      document.write(`<div>${error.message}.</div>`)
+    }
+
   </script>
   <a href="../index.html">Повернутися до списку завдань</a>
 </body>

@@ -41,14 +41,20 @@
           break;
         case 12: monthName = 'грудень'
           break;
-        default: monthName = 'невідомий'
-          alert('Введіть коректні дані')
-          break;
+        default:
+          throw new Error('Month is not correct')
       }
       return monthName
     }
     const monthNumber = parseInt(prompt('Введіть номер місяця', '1'))
-    document.write(`<div>Місяць під номером ${monthNumber} - це ${getMonthName(monthNumber)}.</div>`)
+
+    try {
+      let res = getMonthName(monthNumber)
+      document.write(`<div>Місяць під номером ${monthNumber} - це ${res}.</div>`)
+    } catch (error) {
+      document.write(`<div>${error.message}.</div>`)
+    }
+
   </script>
   <a href="../index.html">Повернутися до списку завдань</a>
 </body>

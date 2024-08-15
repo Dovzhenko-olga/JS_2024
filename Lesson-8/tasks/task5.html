@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 5</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 5</h1>
+  <p>Дано послідовність оцінок учня. Підрахувати кількість:
+  <ul>
+    <li>двійок;</li>
+    <li>кількість хороших оцінок (добре, відмінно);</li>
+    <li>кількість оцінок, які нижче середнього.</li>
+  </ul>
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      // let studentMarks = [5, 4, 5, 3, 2, 5, 5, 4, 4]
+      function getStudentMarks() {
+        const studentMarks = []
+        do {
+          studentMark = parseInt(prompt(`Введіть оцінку учня`, '5'))
+          if (studentMark)
+            studentMarks.push(studentMark)
+        } while (studentMark)
+
+        return studentMarks
+      }
+
+      function getDeuceAmount(studentMarks) {
+        let deuceAmount = 0
+
+        for (let i = 0; i < studentMarks.length; i++) {
+          if (studentMarks[i] === 2)
+            deuceAmount++
+        }
+
+        return deuceAmount
+      }
+
+
+      function getGoodMarksAmount(studentMarks) {
+        let goodMarksAmount = 0
+
+        for (let i = 0; i < studentMarks.length; i++) {
+          if (studentMarks[i] >= 4)
+            goodMarksAmount++
+        }
+        return goodMarksAmount
+      }
+
+      function getBadMarksAmount(studentMarks) {
+        let badMarksAmount = 0
+        for (let i = 0; i < studentMarks.length; i++) {
+          if (studentMarks[i] < 4)
+            badMarksAmount++
+        }
+        return badMarksAmount
+      }
+
+      const studentMarks = getStudentMarks()
+
+      document.write(`<div>За даний період учень має:
+      <ol>
+        <li>${getDeuceAmount(studentMarks)} двійок;</li>
+        <li>${getGoodMarksAmount(studentMarks)} хороших оцінок (добре, відмінно);</li>
+        <li>${getBadMarksAmount(studentMarks)} оцінок, які нижче середнього.</li>
+      </ol>
+    </div>`)
+    }
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

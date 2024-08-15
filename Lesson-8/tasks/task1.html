@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 1</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 1</h1>
+  <p>Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії він відноситься
+    (відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є хоча би одна
+    трійка)).</p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      function getSubjectsMarks(subjectsNumber) {
+        const subjectsMarks = []
+
+        for (let i = 1; i <= subjectsNumber; i++) {
+          const mark = parseInt(prompt(`Введіть оцінку для предмету №${i}`, '5'))
+          subjectsMarks.push(mark)
+        }
+
+        return subjectsMarks
+      }
+
+      function getAverageScore(subjectsNumber, subjectsMarks) {
+        let marksSum = 0
+        for (let i = 0; i < subjectsNumber; i++)
+          marksSum += subjectsMarks[i]
+        return marksSum / subjectsNumber
+      }
+
+      function getStudentSuccessCategory(subjectsMarks) {
+
+        let studentSuccessCategory = ''
+        if (averageScore === 5)
+          studentSuccessCategory = 'відмінник'
+        else {
+          for (let i = 0; i < subjectsMarks.length; i++) {
+            if (subjectsMarks[i] === 2) {
+              studentSuccessCategory = 'двійочник'
+              break
+            }
+            else
+              if (subjectsMarks[i] === 3) {
+                studentSuccessCategory = 'трійочник'
+                break
+              }
+              else studentSuccessCategory = 'хорошист'
+          }
+        }
+        return studentSuccessCategory
+      }
+
+      const subjectsNumber = parseInt(prompt('Введіть кількість предметів', ''))
+
+      const subjectsMarks = getSubjectsMarks(subjectsNumber)
+
+      const averageScore = getAverageScore(subjectsNumber, subjectsMarks)
+
+      const studentSuccessCategory = getStudentSuccessCategory(subjectsMarks)
+
+      document.write(`<div>За показниками оцінок з ${subjectsNumber}-х предметів учень з середнім балом ${Math.floor(averageScore)} є ${studentSuccessCategory}.</div>`)
+    }
+    // function getMinScore(scoresList) {
+    //   let min = scoresList[0] // беремо перший елемента для порівняння як початкоий
+    //   for (let i = 1; i < scoresList.length; i++) {
+    //     //як змінюються номери елементів
+    //     if (scoresList[i] < min) min = scoresList[i] //що треба зробити з кожним із елементів
+    //   }
+    //   return min
+    // }
+
+    // function findCategory(scoresList) {
+    //   //знайти мінімальну оцінку
+    //   const minScore = getMinScore(scoresList)
+    //   //знайти категорію
+    //   let category
+    //   switch (minScore) {
+    //     case 1:
+    //     case 2:
+    //       category = 'Двійочник'
+    //       break
+    //     case 3:
+    //       category = 'Трійочник'
+    //       break
+    //     case 4:
+    //       category = 'Хорошист'
+    //       break
+    //     case 5:
+    //       category = 'Відмінник'
+    //       break
+    //     default:
+    //       throw new Error('Такої оцінки не може бути')
+    //   }
+    //   return category
+    // }
+    // //--
+    // const category = findCategory([4, 5, 2, 5, 4])
+    // document.write(`Category: : ${category}`)
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

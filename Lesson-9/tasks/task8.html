@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 8</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 8</h1>
+  <p>Дано масив номерів авто. Сформувати новий масив тих, які починаються на «А»</p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      const carNumbers = ['AA5254KI', 'AI5254HT', 'CAT', 'KA8484AT', 'BE3254EB', 'TESLYA', 'BI9454HT', 'BABY', 'AB4861KA']
+      const findingLetter = 'A'
+
+      const numbersBeginsWithA = []
+
+      for (let i = 0; i < carNumbers.length; i++) {
+        if (carNumbers[i][0] === findingLetter)
+          numbersBeginsWithA.push(carNumbers[i])
+      }
+
+      document.write(`<div>Масив номерів, що починаються з "А": ${numbersBeginsWithA.join(', ')}.</div>`)
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

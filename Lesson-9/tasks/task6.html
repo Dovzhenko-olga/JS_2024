@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 6</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 6</h1>
+  <p>Дано масив елементів. Усі елементи, які більші за перший елемент помножити на 2.</p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '10'))
+
+      const arr = new Array(elementsNumber)
+
+
+      for (let i = 0; i < arr.length; i++) {
+        const random = 1 + Math.floor(Math.random() * 20)
+        arr[i] = random
+      }
+
+      document.write(`<div>Початковий масив ${arr}.</div>`)
+
+      arr.forEach((el, ind, arr) => {
+        if (el > arr[0]) arr[ind] *= 2
+      })
+
+      document.write(`<div>Модифікований   ${arr}.</div>`)
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

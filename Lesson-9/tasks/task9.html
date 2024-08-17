@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 9</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 9</h1>
+  <p>Дано масив імен. Сформувати масив з перших літер цих імен.</p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      const namesArray = ['Katya', 'Artem', 'Danya', 'Nastya', 'Vika', 'Mark', 'Anna', 'Joe', 'Karina']
+
+      const firstLetterArray = namesArray.map(el => el[0])
+
+      document.write(`<div>Масив з перших літер імен: ${firstLetterArray.join(', ')}.</div>`)
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

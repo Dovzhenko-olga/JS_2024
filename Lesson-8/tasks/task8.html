@@ -39,7 +39,7 @@
         let userChoice = 0
 
         do {
-          userChoice = parseInt(prompt(`Виберіть призовий номер від 0 до ${elemNumber - 1}.
+          userChoice = parseInt(prompt(`Виберіть призовий номер від 0 до ${elemNumber - 1}. Зараз Ваш виграш складає ${userPrizeSum}.
         Щоб перервати, натисніть відміна`, '7'))
           if (userChoice)
             userPrizeSum += prizesArray[userChoice]

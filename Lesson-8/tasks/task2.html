@@ -42,13 +42,18 @@
         return dayWithLessThan20
       }
 
-      function getMinVisitedDays(visitorsNumbers) {
-
+      function findMinVisitorsNumber(visitorsNumbers) {
         let minVisitorsNumber = Infinity
+
         for (let i = 0; i < visitorsNumbers.length; i++) {
           if (visitorsNumbers[i] <= minVisitorsNumber)
             minVisitorsNumber = visitorsNumbers[i]
         }
+        return minVisitorsNumber
+      }
+
+      function getMinVisitedDays(visitorsNumbers) {
+        const minVisitorsNumber = findMinVisitorsNumber(visitorsNumbers)
 
         const minVisitedDays = []
         for (let i = 0; i < visitorsNumbers.length; i++) {
@@ -59,13 +64,18 @@
         return minVisitedDays
       }
 
-      function getMaxVisitedDays(visitorsNumbers) {
-
+      function findMaxVisitorsNumber(visitorsNumbers) {
         let maxVisitorsNumber = 0
+
         for (let i = 0; i < visitorsNumbers.length; i++) {
           if (visitorsNumbers[i] >= maxVisitorsNumber)
             maxVisitorsNumber = visitorsNumbers[i]
         }
+        return maxVisitorsNumber
+      }
+
+      function getMaxVisitedDays(visitorsNumbers) {
+        const maxVisitorsNumber = findMaxVisitorsNumber(visitorsNumbers)
 
         const maxVisitedDays = []
         for (let i = 0; i < visitorsNumbers.length; i++) {
@@ -76,32 +86,30 @@
         return maxVisitedDays
       }
 
-      function getTotalVisitorsNumberByDayType(visitorsNumbers) {
-        const maxWorkingDayNumber = 5
-        let workingDaysVisitors = 0
-        let weekendDaysVisitors = 0
+      function getTotalVisitorsNumberByDayType(visitorsNumbers, firstDay, lastDay) {
+        let visitorsNumber = 0
 
-        for (let i = 0; i < visitorsNumbers.length; i++) {
-          if (i < maxWorkingDayNumber)
-            workingDaysVisitors += visitorsNumbers[i]
-          else weekendDaysVisitors += visitorsNumbers[i]
-        }
+        for (let i = firstDay; i < lastDay; i++)
+          visitorsNumber += visitorsNumbers[i]
 
-        return [workingDaysVisitors, weekendDaysVisitors]
+        return visitorsNumber
       }
 
+      const minWorkingDayNumber = 0
+      const maxWorkingDayNumber = 5
+      const maxWeekendDayNumber = 7
       const visitorsNumbers = getVisitorsNumberPerWeek()
       const dayWithLessThan20 = getDayWithLessThan20(visitorsNumbers)
       const minVisitedDays = getMinVisitedDays(visitorsNumbers)
       const maxVisitedDays = getMaxVisitedDays(visitorsNumbers)
-      const totalVisitorsNumberByDayType = getTotalVisitorsNumberByDayType(visitorsNumbers)
 
       document.write(`<div>Статистика за тиждень:
     <ol>
       <li>кількість відвідувачів була меншою за 20 у дні № ${dayWithLessThan20};</li>
       <li>кількість відвідувачів була мінімальною у дні № ${minVisitedDays};</li>
       <li>кількість відвідувачів була максимальною у дні № ${maxVisitedDays};</li>
-      <li>загальна кількість клієнтів у робочі дні ${totalVisitorsNumberByDayType[0]} та загальна кількість клієнтів на вихідних ${totalVisitorsNumberByDayType[1]}.</li>
+      <li>загальна кількість клієнтів у робочі дні ${getTotalVisitorsNumberByDayType(visitorsNumbers, minWorkingDayNumber, maxWorkingDayNumber)}
+      та загальна кількість клієнтів на вихідних ${getTotalVisitorsNumberByDayType(visitorsNumbers, maxWorkingDayNumber, maxWeekendDayNumber)}.</li>
     </ol>
   </div>`)
     }

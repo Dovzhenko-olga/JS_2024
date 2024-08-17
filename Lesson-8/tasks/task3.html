@@ -14,8 +14,10 @@
   <p>Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я «Іван».</p>
   <h2>Результат обчислень</h2>
   <script>
-    if (confirm('Почати тестування?')){
-      
+    if (confirm('Почати тестування?')) {
+
+      const searchingName = 'ivan'
+
       function getStudentsNames() {
         const studentsNames = []
         let studentName = ''
@@ -24,22 +26,22 @@
           if (studentName)
             studentsNames.push(studentName)
         } while (studentName)
-  
+
         return studentsNames
       }
-  
-      function getIvanAmount(studentsNames) {
+
+      function getIvanAmount(studentsNames, searchingName) {
         let ivanAmount = 0
         for (let i = 0; i < studentsNames.length; i++)
-          if (studentsNames[i].toLowerCase() === 'ivan')
+          if (studentsNames[i].toLowerCase() === searchingName)
             ivanAmount++
         return ivanAmount
       }
-  
+
       const studentsNames = getStudentsNames()
-  
-      document.write(`<div>Ім'я Іван зустрічається у цьому класі ${getIvanAmount(studentsNames)}рази(ів).</div>`)
-  }
+
+      document.write(`<div>Ім'я Іван зустрічається у цьому класі ${getIvanAmount(studentsNames, searchingName)} рази(ів).</div>`)
+    }
   </script>
   <a href="../index.html">Повернутися до списку завдань</a>
 </body>

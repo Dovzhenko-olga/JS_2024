@@ -23,13 +23,14 @@
     if (confirm('Почати тестування?')) {
 
       document.write(`<div style="text-decoration: underline;">Номери - строки</div>`)
-      let carNumbers = ['AA5254KI', 'AI5254HT', 'CAT', 'KA8484AT', 'BE3254EB', 'TESLYA', 'BI9454HT', 'BABY', 'AB4861KA']
+      const carNumbers = ['AA5254KI', 'AI5254HT', 'CAT', 'KA8484AT', 'BE3254EB', 'TESLYA', 'BI9454HT', 'BABY', 'AB4861KA']
+      const findingLetter = 'A'
 
-      function getAmountOfNumbersWIthLetterA(carNumbers) {
+      function getAmountOfNumbersWIthLetterA(carNumbers, findingLetter) {
         let amountOfNumbersWIthLetterA = 0
 
         for (let i = 0; i < carNumbers.length; i++) {
-          if (carNumbers[i].charCodeAt(0) === 'A'.charCodeAt(0))
+          if (carNumbers[i][0] === findingLetter)
             amountOfNumbersWIthLetterA++
         }
 
@@ -58,7 +59,7 @@
 
       document.write(`<div>Звіт по номерах:
         <ol>
-          <li>починаються на букву «А» ${getAmountOfNumbersWIthLetterA(carNumbers)} номери;</li>
+          <li>починаються на букву «А» ${getAmountOfNumbersWIthLetterA(carNumbers, findingLetter)} номери;</li>
           <li>перша і остання літери співпадають у ${getFirstEndEqualAmount(carNumbers)} номерів;</li>
           <li>складаються з більше ніш 5 символів ${getMoreThanFifeLetterAmount(carNumbers)} номерів.</li>
         </ol>
@@ -66,13 +67,13 @@
 
       // ====================масиви======================
       document.write(`<div style="text-decoration: underline;">Номери - масиви</div>`)
-      let carNumbersArr = [['A', 'A', 5, 2, 5, 4, 'K', 'I'], ['A', 'I', 5, 2, 5, 4, 'H', 'T'], ['C', 'A', 'T'], ['K', 'A', 8, 4, 8, 4, 'A', 'T'], ['B', 'E', 3, 2, 5, 4, 'E', 'B'], ['T', 'E', 'S', 'L', 'Y', 'A'], ['B', 'I', 9, 4, 5, 4, 'H', 'T'], ['B', 'A', 'B', 'Y'], ['A', 'B', 4, 8, 6, 1, 'K', 'A']]
+      const carNumbersArr = [['A', 'A', 5, 2, 5, 4, 'K', 'I'], ['A', 'I', 5, 2, 5, 4, 'H', 'T'], ['C', 'A', 'T'], ['K', 'A', 8, 4, 8, 4, 'A', 'T'], ['B', 'E', 3, 2, 5, 4, 'E', 'B'], ['T', 'E', 'S', 'L', 'Y', 'A'], ['B', 'I', 9, 4, 5, 4, 'H', 'T'], ['B', 'A', 'B', 'Y'], ['A', 'B', 4, 8, 6, 1, 'K', 'A']]
 
-      function getAmountOfNumbersWIthLetterA2(carNumbersArr) {
+      function getAmountOfNumbersWIthLetterA2(carNumbersArr, findingLetter) {
         let amountOfNumbersWIthLetterA = 0
 
         for (let i = 0; i < carNumbersArr.length; i++) {
-          if (carNumbersArr[i][0] === 'A')
+          if (carNumbersArr[i][0] === findingLetter)
             amountOfNumbersWIthLetterA++
         }
 
@@ -101,7 +102,7 @@
 
       document.write(`<div>Звіт по номерах:
           <ol>
-            <li>починаються на букву «А» ${getAmountOfNumbersWIthLetterA2(carNumbersArr)} номери;</li>
+            <li>починаються на букву «А» ${getAmountOfNumbersWIthLetterA2(carNumbersArr, findingLetter)} номери;</li>
             <li>перша і остання літери співпадають у ${getFirstEndEqualAmount2(carNumbersArr)} номерів;</li>
             <li>складаються з більше ніш 5 символів ${getMoreThanFifeLetterAmount2(carNumbersArr)} номерів.</li>
           </ol>

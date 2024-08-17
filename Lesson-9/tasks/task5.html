@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 5</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 5</h1>
+  <p>Дано масив елементів. Знайти добуток додатних елементів.</p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '10'))
+
+      const arr = new Array(elementsNumber)
+
+      for (let i = 0; i < arr.length; i++) {
+        const random = -50 + Math.floor(Math.random() * 101)
+        arr[i] = random
+      }
+
+      let productPositiveElements = 1
+      for (const el of arr) {
+        if (el > 0)
+          productPositiveElements *= el
+      }
+
+      document.write(`<div>В масиві з ${elementsNumber} елементів добуток додатних елементів дорівнює ${productPositiveElements}.</div>`)
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

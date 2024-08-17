@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 10</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 10</h1>
+  <p>Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде містити величину сплаченого податку у грн.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '10'))
+
+      const pricesArr = new Array(elementsNumber)
+
+      for (let i = 0; i < pricesArr.length; i++) {
+        const random = 1 + Math.floor(Math.random() * 100)
+        pricesArr[i] = random
+      }
+
+      document.write(`<div>Масив цін: ${pricesArr.join(', ')}.</div>`)
+
+      const taxArray = pricesArr.map(el => parseFloat((el * 0.2).toFixed(2)))
+
+      document.write(`<div>Масив податуів: ${taxArray.join(', ')}.</div>`)
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

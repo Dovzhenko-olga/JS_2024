@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 2</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 2</h1>
+  <p>Користувач вводить кількість елементів. Створити масив, у якому перша половина заповнена 1-цями, а друга
+    заповнена 7-ками.</p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '5'))
+
+      const arr = new Array(elementsNumber).fill(1)
+      arr.fill(7, Math.ceil(elementsNumber / 2))
+
+      document.write(`<div>Масив з ${elementsNumber} елементів ${arr}.</div>`)
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

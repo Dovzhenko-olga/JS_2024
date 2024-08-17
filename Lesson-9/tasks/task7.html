@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 7</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 7</h1>
+  <p>Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за 1000 грн. дати 30% знижки.</p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '10'))
+
+      const arr = new Array(elementsNumber)
+
+
+      for (let i = 0; i < arr.length; i++) {
+        const random = 500 + Math.floor(Math.random() * 1001)
+        arr[i] = random
+      }
+
+      document.write(`<div>Звичайні ціни   ${arr}.</div>`)
+
+      arr.forEach((el, ind, arr) => {
+        if (el > 1000) arr[ind] = parseFloat((arr[ind] - arr[ind] * 0.3).toFixed(2))
+      })
+
+      document.write(`<div>Ціни зі знижками ${arr}.</div>`)
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 4</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 4</h1>
+  <p>Дано масив елементів. Вивести на екран елементи, що більші за 100.</p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+
+      const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '10'))
+
+      const arr = new Array(elementsNumber)
+
+      for (let i = 0; i < arr.length; i++) {
+        const random = 1 + Math.floor(Math.random() * 200)
+        arr[i] = random
+      }
+      let arrMoreHundred = []
+      for (const el of arr) {
+        if (el > 100)
+          arrMoreHundred.push(el)
+      }
+
+      document.write(`<div>В масиві з ${elementsNumber} елементів є ${arrMoreHundred.length} більших за 100: ${arrMoreHundred}.</div>`)
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

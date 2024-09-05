@@ -18,9 +18,9 @@
     if (confirm('Почати тестування?')) {
 
       const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '5'))
+      const middleOfArray = Math.ceil(elementsNumber / 2)
 
-      const arr = new Array(elementsNumber).fill(1)
-      arr.fill(7, Math.ceil(elementsNumber / 2))
+      const arr = new Array(elementsNumber).fill(1, 0, middleOfArray).fill(7, middleOfArray)
 
       document.write(`<div>Масив з ${elementsNumber} елементів ${arr}.</div>`)
     }

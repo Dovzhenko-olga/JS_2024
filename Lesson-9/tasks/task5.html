@@ -16,20 +16,33 @@
   <script>
     if (confirm('Почати тестування?')) {
 
+      function getRundomNumber(min = -50, max = 50) {
+        return min + Math.floor(Math.random() * (max - min + 1))
+      }
+
+      function getArray(elementsNumber) {
+        const arr = new Array(elementsNumber)
+
+        for (let i = 0; i < arr.length; i++) {
+          const random = getRundomNumber()
+          arr[i] = random
+        }
+        return arr
+      }
+
+      function getProductPositiveElements(arr) {
+        let productPositiveElements = 1
+
+        for (const el of arr) {
+          if (el > 0)
+            productPositiveElements *= el
+        }
+        return productPositiveElements
+      }
+
       const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '10'))
-
-      const arr = new Array(elementsNumber)
-
-      for (let i = 0; i < arr.length; i++) {
-        const random = -50 + Math.floor(Math.random() * 101)
-        arr[i] = random
-      }
-
-      let productPositiveElements = 1
-      for (const el of arr) {
-        if (el > 0)
-          productPositiveElements *= el
-      }
+      const arr = getArray(elementsNumber)
+      const productPositiveElements = getProductPositiveElements(arr)
 
       document.write(`<div>В масиві з ${elementsNumber} елементів добуток додатних елементів дорівнює ${productPositiveElements}.</div>`)
     }

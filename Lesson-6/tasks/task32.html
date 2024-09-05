@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 4.1</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 4.1</h1>
+  <p>
+    З клавіатури вводяться два числа N i M (N менше M). Вивести а екран числа</br>
+    N---M</br>
+    N+1 --- M-1</br>
+    N+2 --- M-2</br>
+    N+3 --- M-3</br>
+    . . . . . .</br>
+    Виведення завершити коли число справа стане меншим за число зліва.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+      let N = parseInt(prompt('Введіть початкове значення N', '10'))
+      let M = parseInt(prompt('Введіть початкове значення M (більше за N)', '20'))
+
+      // while (N <= M) {
+      //   document.write(`${N}---${M}</br>`)
+      //   N++
+      //   M--
+      // }
+
+      for (let i = N, j = M; i <= j; i++, j--) {
+        document.write(`${i}---${j}</br>`)
+      }
+
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

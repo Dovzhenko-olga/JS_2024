@@ -16,16 +16,22 @@
   <script>
     if (confirm('Почати тестування?')) {
 
-      const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '10'))
-
-      const arr = new Array(elementsNumber)
-
-
-      for (let i = 0; i < arr.length; i++) {
-        const random = 1 + Math.floor(Math.random() * 20)
-        arr[i] = random
+      function getRundomNumber(min = 1, max = 100) {
+        return min + Math.floor(Math.random() * (max - min + 1))
       }
 
+      function getArray(elementsNumber) {
+        const arr = []
+
+        for (let i = 0; i < elementsNumber; i++) {
+          const random = getRundomNumber()
+          arr.push(random)
+        }
+        return arr
+      }
+
+      const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '10'))
+      const arr = getArray(elementsNumber)
       document.write(`<div>Початковий масив ${arr}.</div>`)
 
       arr.forEach((el, ind, arr) => {

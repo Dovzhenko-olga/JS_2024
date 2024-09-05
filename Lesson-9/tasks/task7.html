@@ -16,20 +16,21 @@
   <script>
     if (confirm('Почати тестування?')) {
 
-      const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '10'))
-
-      const arr = new Array(elementsNumber)
-
-
-      for (let i = 0; i < arr.length; i++) {
-        const random = 500 + Math.floor(Math.random() * 1001)
-        arr[i] = random
+      function getRundomNumber(min = 500, max = 1500) {
+        return min + Math.floor(Math.random() * (max - min + 1))
       }
+
+      function getArray(elementsNumber) {
+        return new Array(elementsNumber).fill(0).map(() => getRundomNumber())
+      }
+
+      const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '10'))
+      const arr = getArray(elementsNumber)
 
       document.write(`<div>Звичайні ціни   ${arr}.</div>`)
 
       arr.forEach((el, ind, arr) => {
-        if (el > 1000) arr[ind] = parseFloat((arr[ind] * 0.7).toFixed(2))
+        if (el > 1000) arr[ind] = parseFloat((arr[ind] * 0.7).toFixed(2)) // toFixed використано виключно для зовнішнього вигляду при виводі результату
       })
 
       document.write(`<div>Ціни зі знижками ${arr}.</div>`)

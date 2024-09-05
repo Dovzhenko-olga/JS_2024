@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 11</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 11</h1>
+  <p>
+    Комп’ютер загадує випадкове число від 1 до 10. Вгадати число шляхом введеня можливих варіантів. В кінці вивести
+    кількість спроб користувача.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    const randomNumber = 1 + Math.floor(Math.random() * 10)
+    alert('Комп’ютер загадав випадкове число від 1 до 10. Спробуйте його вгадати.')
+    let userChoice
+    let attemptCounter = 0
+    do {
+      attemptCounter++
+      userChoice = parseInt(prompt('Введіть число від 1 до 10.', '7'))
+      if (randomNumber !== userChoice) alert('Число неправильне. Спробуйте ще.')
+    } while (randomNumber !== userChoice)
+    alert(`Вітаємо! Ви вгадали число ${randomNumber} з ${attemptCounter} спроби.`)
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

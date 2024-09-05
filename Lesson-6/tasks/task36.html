@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 16</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 16</h1>
+  <p>
+    Написати програму, яка показуватиме на екрані піднесене до квадрату число, що вводиться користувачем. Користувач
+    вирішує самостійно – виходити з програми або продовжувати ввід. (Підказка: потрібно запустити нескінчений цикл,
+    в тілі якого передбачити його переривання у випадку настання певної умови).
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+      let userNumber = true
+
+      while (userNumber) {
+        userNumber = parseFloat(prompt(`Введіть число для піднесення до квадрату. Якщо хочете завершити, натисніть "Відміна".`, '3'))
+        if (userNumber) {
+          const numberPow = Math.pow(userNumber, 2)
+          alert(`Піднесене до квадрату число ${userNumber} дорівнює ${numberPow}.`)
+        }
+        else {
+          alert('Дякуємо, заходьте ще!')
+          break
+        }
+      }
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

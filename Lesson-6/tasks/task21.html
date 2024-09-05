@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 13</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 13</h1>
+  <p>
+    З клавіатури вводяться поступово числа. Знайти два найменші числа. Ввід здійснюється до тих пір, поки різниця
+    між такими числами є більшою за 5.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+
+    let userNumber1 = parseFloat(prompt('Введіть перше число для порівняння.', '20'))
+    let userNumber2 = parseFloat(prompt('Введіть друге число для порівняння.', '14'))
+    let minNumber1
+    let minNumber2
+    if (userNumber1 < userNumber2) {
+      minNumber1 = userNumber1
+      minNumber2 = userNumber2
+    } else {
+      minNumber1 = userNumber2
+      minNumber2 = userNumber1
+    }
+    while (minNumber2 - minNumber1 > 5) {
+      let userChoice = parseFloat(prompt('Введіть ще одне число.', '5'))
+      if (userChoice < minNumber1) {
+        minNumber2 = minNumber1
+        minNumber1 = userChoice
+      }
+      else if (userChoice < minNumber2)
+        minNumber2 = userChoice
+    }
+
+    alert(`Два найменших введених числа ${minNumber1} і ${minNumber2}.`)
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

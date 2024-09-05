@@ -17,20 +17,21 @@
   <script>
     if (confirm('Почати тестування?')) {
 
-      const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '10'))
-
-      const pricesArr = new Array(elementsNumber)
-
-      for (let i = 0; i < pricesArr.length; i++) {
-        const random = 1 + Math.floor(Math.random() * 100)
-        pricesArr[i] = random
+      function getRundomNumber(min = 1, max = 100) {
+        return min + Math.floor(Math.random() * (max - min + 1))
       }
 
+      function getPricesArray(elementsNumber) {
+        return new Array(elementsNumber).fill(0).map(() => getRundomNumber())
+      }
+
+      const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '10'))
+      const pricesArr = getPricesArray(elementsNumber)
       document.write(`<div>Масив цін: ${pricesArr.join(', ')}.</div>`)
 
       const tax = 0.2
 
-      const taxArray = pricesArr.map(el => parseFloat((el * tax).toFixed(2)))
+      const taxArray = pricesArr.map(el => parseFloat((el * tax).toFixed(2)))// toFixed використано виключно для зовнішнього вигляду при виводі результату
 
       document.write(`<div>Масив податків: ${taxArray.join(', ')}.</div>`)
     }

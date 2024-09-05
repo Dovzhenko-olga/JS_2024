@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 11.1</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 11.1</h1>
+  <p>
+    Комп’ютер загадує два випадкових числа від 1 до 10. Вгадати обидва числа шляхом введеня можливих варіантів. В
+    кінці вивести кількість спроб користувача.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    const randomNumber1 = 1 + Math.floor(Math.random() * 10)
+    const randomNumber2 = 1 + Math.floor(Math.random() * 10)
+    console.log(randomNumber1)
+    console.log(randomNumber2)
+    alert('Комп’ютер загадав два випадкових числа від 1 до 10. Спробуйте їх вгадати.')
+    let userChoice1
+    let userChoice2
+    let attemptCounter = 0
+    do {
+      attemptCounter++
+      userChoice1 = parseInt(prompt('Введіть число від 1 до 10.', '7'))
+      userChoice2 = parseInt(prompt('Введіть число від 1 до 10.', '7'))
+      if (randomNumber1 !== userChoice1 && randomNumber2 !== userChoice2) alert('Спробуйте ще раз.')
+    } while (randomNumber1 !== userChoice1 && randomNumber2 !== userChoice2)
+    alert(`Вітаємо! Ви вгадали числа ${randomNumber1} і ${randomNumber2} з ${attemptCounter} спроби.`)
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

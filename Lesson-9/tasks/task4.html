@@ -16,19 +16,33 @@
   <script>
     if (confirm('Почати тестування?')) {
 
+      function getRundomNumber(min = 1, max = 200) {
+        return min + Math.floor(Math.random() * (max - min + 1))
+      }
+
+      function getArray(elementsNumber) {
+        const arr = new Array(elementsNumber)
+
+        for (let i = 0; i < arr.length; i++) {
+          const random = getRundomNumber()
+          arr[i] = random
+        }
+        return arr
+      }
+
+      function getArrayMoreHundred(arr) {
+        const arrMoreHundred = []
+
+        for (const el of arr) {
+          if (el > 100)
+            arrMoreHundred.push(el)
+        }
+        return arrMoreHundred
+      }
+
       const elementsNumber = parseInt(prompt(`Введіть кількість елементів масиву`, '10'))
-
-      const arr = new Array(elementsNumber)
-
-      for (let i = 0; i < arr.length; i++) {
-        const random = 1 + Math.floor(Math.random() * 200)
-        arr[i] = random
-      }
-      let arrMoreHundred = []
-      for (const el of arr) {
-        if (el > 100)
-          arrMoreHundred.push(el)
-      }
+      const arr = getArray(elementsNumber)
+      const arrMoreHundred = getArrayMoreHundred(arr)
 
       document.write(`<div>В масиві з ${elementsNumber} елементів є ${arrMoreHundred.length} більших за 100: ${arrMoreHundred}.</div>`)
     }

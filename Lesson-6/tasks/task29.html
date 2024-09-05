@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 11.1</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body style="height: max-content;">
+  <h1>Задача 11.1</h1>
+  <p>
+    Вивести на екран усі трицифрові числа, у яких перша цифра є більшою або рівною за суму другої і третьої.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+
+    for (let i = 1; i <= 9; i++) {
+      for (let j = 0; j <= 9; j++) {
+        for (let k = 0; k <= 9; k++) {
+          if (i >= (j + k))
+            document.write(`${i}${j}${k}<br>`)
+        }
+      }
+    }
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

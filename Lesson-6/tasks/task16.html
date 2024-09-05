@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 9</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 9</h1>
+  <p>
+    З клавіатури вводиться пароль (правильний пароль- 78). Поки пароль не вірний дати можливість користувачу повторно
+    ввести його.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    const PASSWORD = 78
+    let userPassword
+
+    do {
+      userPassword = parseInt(prompt('Введіть двозначний пароль', '56'))
+      if (userPassword !== PASSWORD)
+        alert('Неправильний пароль. Спробуйте ще.')
+    } while (userPassword !== PASSWORD)
+    alert('Вітаємо! Ви увійшли в обліковий запис.')
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

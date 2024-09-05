@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 15</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 15</h1>
+  <p>
+    На складі зберігається певна кількість ящиків з яблуками (наприклад, 15). Коли під’їде машина для завантаження,
+    попросити користувача ввести, скільки ящиків завантажити у першу машину, у другу і т. д., поки на складі не
+    закінчаться ящики з яблуками. Передбачити той випадок, коли користувач вводить кількість, що перевищує поточну
+    кількість ящиків на складі.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+      let boxesAmount = 15
+      let countCars = 1
+
+      do {
+        const userCargo = parseInt(prompt(`На складі є ${boxesAmount} ящиків. Введіть, скільки ящиків завантажити у машину ${countCars}`, '3'))
+        if (userCargo > boxesAmount) {
+          alert(`В наявності ${boxesAmount} ящиків. Введіть коректні дані`)
+          continue
+        } else {
+          boxesAmount -= userCargo
+          countCars++
+        }
+      } while (boxesAmount > 0)
+      alert('Всі яблука загружені!')
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

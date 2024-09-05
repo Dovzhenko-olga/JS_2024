@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 12</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 12</h1>
+  <p>
+    З клавіатури вводяться поступово числа. Знайти два найбільші числа. Ввід здійснюється до тих пір, поки різниця
+    між такими числами є більшою за 5.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+
+    let userNumber1 = parseFloat(prompt('Введіть перше число для порівняння.', '20'))
+    let userNumber2 = parseFloat(prompt('Введіть друге число для порівняння.', '1'))
+    let maxNumber1
+    let maxNumber2
+    if (userNumber1 > userNumber2) {
+      maxNumber1 = userNumber1
+      maxNumber2 = userNumber2
+    } else {
+      maxNumber1 = userNumber2
+      maxNumber2 = userNumber1
+    }
+    while (maxNumber1 - maxNumber2 > 5) {
+      let userChoice = parseFloat(prompt('Введіть ще одне число.', '5'))
+      if (userChoice > maxNumber1) {
+        maxNumber2 = maxNumber1
+        maxNumber1 = userChoice
+      }
+      else if (userChoice > maxNumber2)
+        maxNumber2 = userChoice
+    }
+
+    alert(`Два найбільших введених числа ${maxNumber1} і ${maxNumber2}.`)
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

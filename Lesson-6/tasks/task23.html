@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 6</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 6</h1>
+  <p>
+    Інвестор вклав S тис. грн на 20 років під 20% річних, податок складає 5% від суми прибутку. Визначити за
+    допомогою циклів суму, яку він одержить.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+
+    let userDeposit = parseFloat(prompt('Введіть суму вкладу.', '1000'))
+    const termOfDeposit = 20
+    const depositPercentage = 20
+    const taxPercentage = 5
+    document.write(`Вкладено ${userDeposit} грн. </br>`)
+
+    for (let i = 1; i <= termOfDeposit; i++) {
+      const profit = userDeposit * depositPercentage / 100
+      const tax = profit * taxPercentage / 100
+      userDeposit += (profit - tax)
+      document.write(`За рік ${i} на рахунку інвестора буде ${userDeposit.toFixed(2)} грн.</br>`)
+    }
+
+
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

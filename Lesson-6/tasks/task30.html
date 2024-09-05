@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 12</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body style="height: max-content;">
+  <h1>Задача 12</h1>
+  <p>
+    Написати програму виведення на екран кожного символу латинського алфавіту та поруч з кожним з них символу, що
+    передує йому та що слідує за ним.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+      const firstLetterCode = 65
+      const lastLetterCode = 90
+
+      for (let i = firstLetterCode; i <= lastLetterCode; i++) {
+        if (i === firstLetterCode)
+          document.write(`${String.fromCharCode(i)} ${String.fromCharCode(i + 1)}<br>`)
+        else if (i === lastLetterCode)
+          document.write(`${String.fromCharCode(i - 1)} ${String.fromCharCode(i)}<br>`)
+        else document.write(`${String.fromCharCode(i - 1)} ${String.fromCharCode(i)} ${String.fromCharCode(i + 1)}<br>`)
+      }
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

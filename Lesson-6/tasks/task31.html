@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 4</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 4</h1>
+  <p>
+    З клавіатури вводиться початкове знчення суми. Поки сума є меншою за 100 додавати до неї числа, які вводяться з
+    клавіатури.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+      let startSum = parseFloat(prompt('Введіть початкове значення суми', '10'))
+
+      while (startSum < 100) {
+        let userNumber = parseFloat(prompt('Сума менше 100, введіть число для додавання', '10'))
+        startSum += userNumber
+      }
+
+      alert(` Значення суми досягло ${startSum}. Процес додавання припинено.`)
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

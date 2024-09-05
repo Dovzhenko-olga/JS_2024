@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 14</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 14</h1>
+  <p>
+    Зобразити рівнобедрений трикутник із символів ^. Висоту задає користувач.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+      const height = parseInt(prompt('Введіть висоту трикутника', '20'))
+      const symbol = '^'
+      document.write(`<div style="text-align: center; width: fit-content;">`)
+      for (let i = 0; i < height; i++) {
+        for (let j = 0; j < 2 * i + 1; j++) {
+          document.write(`${symbol}`)
+        }
+        document.write(`<br>`)
+      }
+      document.write(`</div>`)
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 17</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 17</h1>
+  <p>
+    Щоденно спортзал відвідує певна кількість людей. Користувач вводить такі дані: скільки людей відвідало спортзал
+    за день та вік кожного відвідувача. Потрібно вивести вік найстаршого та наймолодшого відвідувачів, а також
+    середній вік всіх відвідувачів спортзалу за день.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+      const visitorsNumber = parseInt(prompt(`Введіть кількість відвідувачів спортзалу.`, '5'))
+      let minAge = Infinity
+      let maxAge = 0
+      let sumAge = 0
+
+      for (let i = 1; i <= visitorsNumber; i++) {
+        const visitorAge = parseInt(prompt(`Введіть вік ${i} відвідувача.`, '25'))
+        if (maxAge < visitorAge)
+          maxAge = visitorAge
+        if (minAge > visitorAge) minAge = visitorAge
+        sumAge += visitorAge
+      }
+
+      document.write(`<div>Вік найстаршого відвідувача ${maxAge}, наймолодшого ${minAge}, середній вік всіх відвідувачів спортзалу за день ${Math.floor(sumAge / visitorsNumber)}</div>`)
+
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

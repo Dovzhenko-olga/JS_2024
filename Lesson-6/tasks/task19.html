@@ -17,22 +17,47 @@
   </p>
   <h2>Результат обчислень</h2>
   <script>
-    const randomNumber1 = 1 + Math.floor(Math.random() * 10)
-    const randomNumber2 = 1 + Math.floor(Math.random() * 10)
-    console.log(randomNumber1)
-    console.log(randomNumber2)
-    alert('Комп’ютер загадав два випадкових числа від 1 до 10. Спробуйте їх вгадати.')
-    let userChoice1
-    let userChoice2
-    let attemptCounter = 0
-    do {
-      attemptCounter++
-      userChoice1 = parseInt(prompt('Введіть число від 1 до 10.', '7'))
-      userChoice2 = parseInt(prompt('Введіть число від 1 до 10.', '7'))
-      if (randomNumber1 !== userChoice1 && randomNumber2 !== userChoice2) alert('Спробуйте ще раз.')
-    } while (randomNumber1 !== userChoice1 && randomNumber2 !== userChoice2)
-    alert(`Вітаємо! Ви вгадали числа ${randomNumber1} і ${randomNumber2} з ${attemptCounter} спроби.`)
+    if (confirm('Почати тестування?')) {
+      const randomNumber1 = 1 + Math.floor(Math.random() * 10)
+      const randomNumber2 = 1 + Math.floor(Math.random() * 10)
+      console.log(randomNumber1)
+      console.log(randomNumber2)
+      alert('Комп’ютер загадав два випадкових числа від 1 до 10. Спробуйте їх вгадати.')
+      let userChoice1
+      let userChoice2
+      let attemptCounter = 0
+      do {
+        attemptCounter++
+        userChoice1 = parseInt(prompt('Введіть число від 1 до 10.', '7'))
+        userChoice2 = parseInt(prompt('Введіть число від 1 до 10.', '7'))
+        if (randomNumber1 !== userChoice1 && randomNumber2 !== userChoice2) alert('Спробуйте ще раз.')
+      } while (randomNumber1 !== userChoice1 && randomNumber2 !== userChoice2)
+      alert(`Вітаємо! Ви вгадали числа ${randomNumber1} і ${randomNumber2} з ${attemptCounter} спроби.`)
 
+      // let randNum1 = 1 + Math.floor(Math.random() * 10)
+      // let randNum2
+      // do {
+      //   randNum2 = 1 + Math.floor(Math.random() * 10)
+      // } while (randNum2 === randNum1)
+
+      // alert(`num1 = ${randNum1}, num2 = ${randNum2} `)
+      // let isNum1Hidden = true
+      // let isNum2Hidden = true
+      // let attemptCounter = 0
+
+      // while (isNum1Hidden  || isNum2Hidden) {
+      // attemptCounter++
+      //   let userNum = parseInt(prompt('Введіть число'))
+      //   if (isNum1Hidden && userNum === randNum1) {
+      //     isNum1Hidden = false
+      //     alert('Вгадав перше число')
+      //   } else if (isNum2Hidden && userNum === randNum2) {
+      //     isNum2Hidden = false
+      //     alert('Вгадано друге число')
+      //   } else alert('Ви не вгадали')
+      // }
+      // alert('Вітаємо! Ви вгадали обидва числа з ${attemptCounter} спроби.')
+    }
   </script>
   <a href="../index.html">Повернутися до списку завдань</a>
 </body>

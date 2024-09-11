@@ -19,7 +19,7 @@ if (confirm('Почати тестування?')) {
   document.write(`<div>Початковий масив: ${arr}.</div>`)
 
   const priceChahge = arr.reduce((count, el, ind, baseArray) => {
-    if (el !== baseArray[ind + 1] && ind !== baseArray.length - 1) count++
+    if (ind > 0 && el !== baseArray[ind - 1]) count++
     return count
   }, 0)
   document.write(`<div>Ціна змінювалась ${priceChahge} разів.</div>`)

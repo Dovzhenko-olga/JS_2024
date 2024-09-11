@@ -34,8 +34,9 @@
       const arr = getArray(elementsNumber)
       document.write(`<div>Початковий масив ${arr}.</div>`)
 
+      const firstEl = arr[0]
       arr.forEach((el, ind, arr) => {
-        if (el > arr[0]) arr[ind] *= 2
+        if (el > firstEl) arr[ind] *= 2
       })
 
       document.write(`<div>Модифікований   ${arr}.</div>`)

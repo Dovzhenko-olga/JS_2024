@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 18</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 18</h1>
+  <p>
+    З клавіатури вводяться числа до тих пір, поки послідовність є зростаючою або спадною.
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+      let num1 = parseInt(prompt('Введіть число'))
+      let num2 = parseInt(prompt('Введіть число'))
+      let diff = num2 - num1
+      do {
+        num1 = num2
+        num2 = parseInt(prompt('Введіть число'))
+      } while (diff * (num2 - num1) > 0)
+
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 18</title>
+  <!-- <script src="./scripts/task1.js"></script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Задача 18</h1>
+  <p>
+    Знайти суму цифр числа, що знаходяться між першою цифрою 7 і останньою цифрою 7 (у числі є всього дві цифри 7,
+    наприклад: 2679328712)
+  </p>
+  <h2>Результат обчислень</h2>
+  <script>
+    if (confirm('Почати тестування?')) {
+      // let number = 2679328712
+      let number = parseInt(prompt('Введіть число з двома сімками і цифрами між ними', '231754352135763'))
+      document.write(`<div>Початкове число: ${number}</div>`)
+      //остнання цифра  number%10 = 
+      //відкинути останню цифру   number = Math.floor(number/10)   = 
+      let lastDigit
+      //поки з кінця не зустрінемо 7 будемо відкидати цифри
+      do {
+        lastDigit = number % 10 //знайшли останню цифру
+        number = Math.floor(number / 10) //відкинули останню цифру
+      } while (lastDigit !== 7)
+
+      //поки не зустрінемо наступну 7 будемо брати цифри і додавати їх
+      let sum = 0
+      do {
+        lastDigit = number % 10 //знайшли остання цифру
+        if (lastDigit !== 7) sum += lastDigit
+        number = Math.floor(number / 10) //відкинули останню цифру
+      } while (lastDigit !== 7)
+      document.write(`<div>Сума цифр, що знаходяться між першою цифрою 7 і останньою цифрою 7 дорівнює ${sum}</div>`)
+    }
+  </script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

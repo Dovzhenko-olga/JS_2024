@@ -16,43 +16,80 @@
   <h2>Результат обчислень</h2>
   <script>
 
-    function getAnalyticalData(num1, num2, num3) {
-      let analyticalData = []
-      //Знаходимо кількість парних
-      let evenNumbersAmount = 0
-      if (num1 % 2 === 0)
-        evenNumbersAmount++
-      if (num2 % 2 === 0)
-        evenNumbersAmount++
-      if (num3 % 2 === 0)
-        evenNumbersAmount++
+    function getResults(n1, n2, n3) {
+      // let evenNum = 3 - n1%2 - n2%2 - n3%2
 
-      analyticalData.push(evenNumbersAmount)
+      let evenNum = 0
+      for (let i = 0; i < arguments.length; i++) {
+        if (arguments[i] % 2 === 0) evenNum++
+      }
 
-      //Знаходимо кількість додатних
-      let positiveNumbersAmount = 0
-      if (num1 > 0)
-        positiveNumbersAmount++
-      if (num2 > 0)
-        positiveNumbersAmount++
-      if (num3 > 0)
-        positiveNumbersAmount++
+      let positiveNum = 0
+      for (let i = 0; i < arguments.length; i++) {
+        if (arguments[i] > 0) positiveNum++
+      }
 
-      analyticalData.push(positiveNumbersAmount)
+      let numGreater100 = 0
+      for (let i = 0; i < arguments.length; i++) {
+        if (arguments[i] > 100) numGreater100++
+      }
 
-      //Знаходимо кількість більших за 100
-      let bigNumbersAmount = 0
-      if (num1 > 100)
-        bigNumbersAmount++
-      if (num2 > 100)
-        bigNumbersAmount++
-      if (num3 > 100)
-        bigNumbersAmount++
-
-      analyticalData.push(bigNumbersAmount)
-
-      return analyticalData
+      return [evenNum, positiveNum, numGreater100]
     }
+    //------------------
+
+    const num1 = parseFloat(prompt('Введіть перше число для обчислень', '1'))
+    const num2 = parseFloat(prompt('Введіть друге число для обчислень', '1'))
+    const num3 = parseFloat(prompt('Введіть третє число для обчислень', '1'))
+
+    const [evRes, posRes, res100] = getResults(num1, num2, num3)
+
+    document.write(`<div>Для чисел ${num1}, ${num2}, ${num3}:
+        <ol>
+          <li>кількість парних дорівнює ${evRes};</li>
+          <li>кількість додатних дорівнює ${posRes};</li>
+          <li>кількість більших за 100 дорівнює ${res100}.</li>
+        </ol>
+      </div>`)
+
+
+    // function getAnalyticalData(num1, num2, num3) {
+    //   let analyticalData = []
+    //   //Знаходимо кількість парних
+    //   let evenNumbersAmount = 0
+    //   if (num1 % 2 === 0)
+    //     evenNumbersAmount++
+    //   if (num2 % 2 === 0)
+    //     evenNumbersAmount++
+    //   if (num3 % 2 === 0)
+    //     evenNumbersAmount++
+
+    //   analyticalData.push(evenNumbersAmount)
+
+    //   //Знаходимо кількість додатних
+    //   let positiveNumbersAmount = 0
+    //   if (num1 > 0)
+    //     positiveNumbersAmount++
+    //   if (num2 > 0)
+    //     positiveNumbersAmount++
+    //   if (num3 > 0)
+    //     positiveNumbersAmount++
+
+    //   analyticalData.push(positiveNumbersAmount)
+
+    //   //Знаходимо кількість більших за 100
+    //   let bigNumbersAmount = 0
+    //   if (num1 > 100)
+    //     bigNumbersAmount++
+    //   if (num2 > 100)
+    //     bigNumbersAmount++
+    //   if (num3 > 100)
+    //     bigNumbersAmount++
+
+    //   analyticalData.push(bigNumbersAmount)
+
+    //   return analyticalData
+    // }
 
     // function getEvenNumbersAmount(num1, num2, num3) {
     //   let evenNumbersAmount = 0
@@ -84,19 +121,19 @@
     //     bigNumbersAmount++
     //   return bigNumbersAmount
     // }
-    const num1 = parseFloat(prompt('Введіть перше число для обчислень', '1'))
-    const num2 = parseFloat(prompt('Введіть друге число для обчислень', '1'))
-    const num3 = parseFloat(prompt('Введіть третє число для обчислень', '1'))
+    //   const num1 = parseFloat(prompt('Введіть перше число для обчислень', '1'))
+    //   const num2 = parseFloat(prompt('Введіть друге число для обчислень', '1'))
+    //   const num3 = parseFloat(prompt('Введіть третє число для обчислень', '1'))
 
-    const res = getAnalyticalData(num1, num2, num3)
+    //   const res = getAnalyticalData(num1, num2, num3)
 
-    document.write(`<div>Для чисел ${num1}, ${num2}, ${num3}:
-    <ol>
-      <li>кількість парних дорівнює ${res[0]};</li>
-      <li>кількість додатних дорівнює ${res[1]};</li>
-      <li>кількість більших за 100 дорівнює ${res[2]}.</li>
-    </ol>
-  </div>`)
+    //   document.write(`<div>Для чисел ${num1}, ${num2}, ${num3}:
+    //   <ol>
+    //     <li>кількість парних дорівнює ${res[0]};</li>
+    //     <li>кількість додатних дорівнює ${res[1]};</li>
+    //     <li>кількість більших за 100 дорівнює ${res[2]}.</li>
+    //   </ol>
+    // </div>`)
   </script>
   <a href="../index.html">Повернутися до списку завдань</a>
 </body>

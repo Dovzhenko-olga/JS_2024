@@ -1,7 +1,7 @@
 if (confirm('Почати тестування?')) {
 
   const girls = ["Olena", "Iryna", "Svitlana", "Oksana"]
-  const boys = ["Andriy", "Vladislav", "Mykola", "Taras",]
+  const boys = ["Andriy", "Vladislav", "Mykola", "Taras"]
   // Не придумала, як приліпити сюди рекурсію - занадто це складно буде для такої простої задачі
 
   function getPairs(girls, boys) {

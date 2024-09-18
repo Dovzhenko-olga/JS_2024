@@ -96,7 +96,7 @@ if (confirm('Почати тестування?')) {
   }
   // знайти рік, коли прибуток був найбільшим
   function siteBigestProfit(sites) {
-    return sites.reduce((prevProfitYear, site, ind, sites) => site.cost > sites[ind - 1]?.cost ? site.year : prevProfitYear)
+    return sites.reduce((prevSite, site) => site.cost > prevSite.cost ? site : prevSite)
   }
   // упорядкувати список за спаданням прибутку
   function getSortedByProfit(sites) {
@@ -118,7 +118,7 @@ if (confirm('Почати тестування?')) {
   <li> Кількість сайтів, що було зроблено між 2000 та 2009 рр.: ${sitesMillenium(sites)}<br>
   <li> Кількість сайтів, де сума спонсорських вкладень була більшою за 100000: ${sitesBigSponsorsMoney(sites)}<br>
   <li> Загальний список усіх спонсорів: ${getSponsors(sites).join(', ')}<br>
-  <li> Рік, коли прибуток був найбільшим: ${siteBigestProfit(sites)}<br>
+  <li> Рік, коли прибуток був найбільшим: ${siteBigestProfit(sites).year}<br>
   </ol>
   `)
 

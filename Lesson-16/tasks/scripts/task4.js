@@ -79,12 +79,12 @@ if (confirm('Почати тестування?')) {
   try {
     const bankomat = new TBankomat()
 
-    bankomat.bills.push(new Bills(200, 5))
     bankomat.bills.push(new Bills(5, 10))
     bankomat.bills.push(new Bills(10, 7))
     bankomat.bills.push(new Bills(20, 15))
     bankomat.bills.push(new Bills(50, 4))
     bankomat.bills.push(new Bills(100, 10))
+    bankomat.bills.push(new Bills(200, 5))
     document.write(`<div>${bankomat}</div>`)
     console.log(bankomat)
 

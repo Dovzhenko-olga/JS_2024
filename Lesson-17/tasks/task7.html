@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 7</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body style="height: max-content">
+  <h1>Задача 7</h1>
+  <p>Подорож складається з 3 етапів. На кожному етапі користувач може вибрати один з видів транспорту (авто,
+    автобус, літак - випадаючий список), харчування (сніданок, обід, вечеря – checkbоx) та одного з 3-х
+    гідів(використати - radio buttons). Ціни визначте самі. Підрахувати загальну вартість.</p>
+  <h2>Результат обчислень</h2>
+  <h3>Етап1</h3>
+  <p>Вид транспорту:</p>
+  <select>
+    <option value="1000">авто</option>
+    <option value="500">автобус</option>
+    <option value="8000">літак</option>
+  </select>
+  <p>Харчування:</p>
+  <label>
+    сніданок
+    <input type="checkbox" value="150" />
+  </label>
+  <label>
+    обід
+    <input type="checkbox" value="200" />
+  </label>
+  <label>
+    вечеря
+    <input type="checkbox" value="250" />
+  </label>
+  <p>Гід:</p>
+  <div>
+    <input type="radio" id="Petro" value=1000 checked />
+    <label for="Petro">Petro</label>
+  </div>
+  <div>
+    <input type="radio" id="Viktor" value=750 />
+    <label for="Viktor">Viktor</label>
+  </div>
+  <div>
+    <input type="radio" id="Dmitro" value=600 />
+    <label for="Dmitro">Dmitro</label>
+  </div>
+  <h3>Етап2</h3>
+  <p>Вид транспорту:</p>
+  <select>
+    <option value="1000">авто</option>
+    <option value="500">автобус</option>
+    <option value="8000">літак</option>
+  </select>
+  <p>Харчування:</p>
+  <label>
+    сніданок
+    <input type="checkbox" value="150" />
+  </label>
+  <label>
+    обід
+    <input type="checkbox" value="200" />
+  </label>
+  <label>
+    вечеря
+    <input type="checkbox" value="250" />
+  </label>
+  <p>Гід:</p>
+  <div>
+    <input type="radio" id="Ivan" value=1000 checked />
+    <label for="Ivan">Ivan</label>
+  </div>
+  <div>
+    <input type="radio" id="Artem" value=750 />
+    <label for="Artem">Artem</label>
+  </div>
+  <div>
+    <input type="radio" id="Oleksandr" value=600 />
+    <label for="Oleksandr">Oleksandr</label>
+  </div>
+  <h3>Етап3</h3>
+  <p>Вид транспорту:</p>
+  <select>
+    <option value="1000">авто</option>
+    <option value="500">автобус</option>
+    <option value="8000">літак</option>
+  </select>
+  <p>Харчування:</p>
+  <label>
+    сніданок
+    <input type="checkbox" value="150" />
+  </label>
+  <label>
+    обід
+    <input type="checkbox" value="200" />
+  </label>
+  <label>
+    вечеря
+    <input type="checkbox" value="250" />
+  </label>
+  <p>Гід:</p>
+  <div>
+    <input type="radio" id="Igor" value=1000 checked />
+    <label for="Igor">Igor</label>
+  </div>
+  <div>
+    <input type="radio" id="Serhiy" value=750 />
+    <label for="Serhiy">Serhiy</label>
+  </div>
+  <div>
+    <input type="radio" id="Andriy" value=600 />
+    <label for="Andriy">Andriy</label>
+  </div>
+  <div>
+    <button>Розрахувати загальну вартість</button>
+  </div>
+  <div>Вартість поїздки: <span id="result"></span></div>
+  <script src="./scripts/task7.js"></script>
+  <a href="../index.html">Повернутися до списку завдань</a>
+</body>
+
+</html>

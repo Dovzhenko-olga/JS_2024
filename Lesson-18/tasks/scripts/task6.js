@@ -1,5 +1,5 @@
-if (confirm('Почати тестування?')) {
-  function getTable() {
+window.onload = function () {
+  function createTable() {
     const userNumber = parseFloat(document.getElementById('numbers').value)
 
     const myTable = document.createElement('table')
@@ -18,7 +18,8 @@ if (confirm('Почати тестування?')) {
       label.append(input)
       myTable.append(myRow)
     }
-    document.getElementById('table').append(myTable)
+
+    return myTable
     // let myTable = `<hr /><table border="3" cellspacing="0" class="table"><tr>`
     // for (let i = 0; i < userNumber; i++) {
 
@@ -32,6 +33,11 @@ if (confirm('Почати тестування?')) {
     // document.getElementById('table').innerHTML = myTable
   }
 
+  function getTable() {
+    const myTable = createTable()
+    document.getElementById('table').append(myTable)
+  }
+
   function getSum() {
     const userNumber = parseFloat(document.getElementById('numbers').value)
     let sum = 0
@@ -43,8 +49,6 @@ if (confirm('Почати тестування?')) {
     document.getElementById('sum').innerText = `sum = ${average.toFixed(2)}`
   }
 
-  window.onload = function () {
-    document.getElementById('getTable').onclick = getTable
-    document.getElementById('getSumButton').onclick = getSum
-  }
+  document.getElementById('getTable').onclick = getTable
+  document.getElementById('getSumButton').onclick = getSum
 }

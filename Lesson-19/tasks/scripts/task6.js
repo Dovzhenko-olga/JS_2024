@@ -18,7 +18,7 @@ window.onload = () => {
 
   const generals = document.querySelector('.general_list .members_list')
   const selected = document.querySelector('.selected_list .members_list')
-  generals.onclick = function (e) {
+  function chooseMember(e, container) {
     if (e.target.tagName === 'svg') {
       const name = e.target.previousElementSibling
       const cloneName = name.cloneNode(true)
@@ -26,12 +26,14 @@ window.onload = () => {
       div.setAttribute('class', 'member')
       div.innerHTML = `${leftArrow}`
       div.prepend(cloneName)
-      selected.append(div)
+      container.append(div)
       const item = e.target.closest('.member')
       item.remove()
     }
   }
-  selected.onclick = function (e) {
+  generals.onclick = (e) => chooseMember(e, selected)
+
+  function removeMember(e, container) {
     if (e.target.tagName === 'svg') {
       const name = e.target.previousElementSibling
       const cloneName = name.cloneNode(true)
@@ -39,11 +41,12 @@ window.onload = () => {
       div.setAttribute('class', 'member')
       div.innerHTML = `${rightArrow}`
       div.prepend(cloneName)
-      generals.append(div)
+      container.append(div)
       const item = e.target.closest('.member')
       item.remove()
     }
   }
+  selected.onclick = (e) => removeMember(e, generals)
 
   // const generals = document.querySelector('.general_list')
   // generals.onclick = function (e) {

@@ -1,4 +1,4 @@
-if (confirm('Почати тестування?')) {
+window.onload = function () {
   function getTable(rows, cols) {
 
     const myTable = document.createElement('table')
@@ -13,7 +13,7 @@ if (confirm('Почати тестування?')) {
       }
       myTable.append(myRow)
     }
-    document.getElementById('table').append(myTable)
+    return myTable
 
     // let myTable = `<table border="1" cellspacing="0">`
     // for (let i = 0; i < 3; i++) {
@@ -27,8 +27,6 @@ if (confirm('Почати тестування?')) {
     // myTable += `</table>`
     // document.getElementById('table').innerHTML = myTable
   }
-
-  window.onload = function () {
-    getTable(3, 4)
-  }
+  const myTable = getTable(3, 4)
+  document.getElementById('table').append(myTable)
 }

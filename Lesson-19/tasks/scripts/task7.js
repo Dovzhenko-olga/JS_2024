@@ -22,7 +22,7 @@ window.onload = () => {
     }
   }
   getSnow(mySnow)
-  function moveSnow() {
+  function moveSnow(snowList) {
     for (let i = 0; i < mySnow.length; i++) {
       newPosition = parseInt(mySnow[i].style.top) + getRandomSpeed()
       mySnow[i].style.top = `${newPosition}px`
@@ -31,5 +31,5 @@ window.onload = () => {
       }
     }
   }
-  setInterval(moveSnow, 1000)
+  setInterval(() => moveSnow(mySnow), 1000)
 }

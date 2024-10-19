@@ -76,7 +76,7 @@ if (confirm('Почати тестування?')) {
     additionMonths(months) {
       const totalMonth = this.Month + months
       if (totalMonth > 12) {
-        const years = Math.floor(totalMonth / 12)
+        const years = Math.floor((totalMonth - 1) / 12)
         this.Month = ((totalMonth - 1) % 12) + 1
         this.additionYears(years)
       }

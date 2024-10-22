@@ -1,6 +1,6 @@
 
 function filtrString(string) {
-  return string.match(/\d/g)
+  return string.match(/\d+/g)
 }
 
 

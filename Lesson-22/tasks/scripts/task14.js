@@ -1,6 +1,6 @@
 
 function filtrString(string) {
-  if (/.gov./.test(string))
+  if (/\.gov(\.|$)/.test(string))
     alert('Це урядовий сайт.')
   else alert('Це не урядовий сайт.')
 }

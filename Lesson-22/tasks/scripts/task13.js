@@ -1,6 +1,10 @@
 
 function filtrString(string) {
-  return string.match(/\d{4}-\d{4}-\d{4}-\d{4}/g)
+  const reg = /\d{4}-\d{4}-\d{4}-\d{4}/g
+  if (reg.test(string))
+    alert('У рядку є номер карти.')
+  else alert('Немає.')
+  return string.match(reg)
 }
 
 

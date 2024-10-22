@@ -1,6 +1,6 @@
 
 function filtrString(string) {
-  return string.match(/\b(202[2-9]|20[3-9][0-9])\b/g)
+  return string.match(/\b(202[2-9]|20[3-9]\d)\b/g)
 }
 
 

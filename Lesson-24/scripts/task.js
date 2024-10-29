@@ -51,7 +51,7 @@ async function getArray(imageNumber, imageRequest) {
 
 window.onload = async () => {
   const imageRequest = new ImageRequest('https://random.dog/woof.json')
-  const imagesList = await getArray(9, imageRequest)
+  const imagesList = await getArray(12, imageRequest)
   const imageGallery = new ImageGallery(imagesList)
   imageGallery.render()
 }

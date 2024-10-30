@@ -28,7 +28,6 @@ class ImageGallery {
       randomImage.setAttribute('src', this.imagesList[i])
       randomImage.classList = 'randomImage'
       imageItem.append(randomImage)
-      console.log(imageItem)
       imageGallery.append(imageItem)
     }
     document.querySelector('.resultContainer').append(imageGallery)
